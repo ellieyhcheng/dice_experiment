@@ -1,0 +1,119 @@
+{
+    "alarm-alt.dice": {
+        "time": 0.24
+    },
+    "alarm-safer.dice": {
+        "time": 0.28
+    },
+    "alarm.dice": {
+        "time": 0.29
+    },
+    "andes.dice": {
+        "time": null
+    },
+    "asia.dice": {
+        "time": 0.03
+    },
+    "barley.dice": {
+        "time": null
+    },
+    "BN_28.dice": {
+        "time": null
+    },
+    "BN_78.dice": {
+        "time": 2.33
+    },
+    "BN_79.dice": {
+        "time": null
+    },
+    "cancer.dice": {
+        "time": 0.04
+    },
+    "child.dice": {
+        "time": 0.02
+    },
+    "cpcs54.dice": {
+        "time": 1.51
+    },
+    "diabetes.dice": {
+        "time": null
+    },
+    "diagnose_a.dice": {
+        "time": 5.71
+    },
+    "diagnose_a_multi.dice": {
+        "time": 5.25
+    },
+    "diagnose_b.dice": {
+        "time": null
+    },
+    "diagnose_b_multi.dice": {
+        "time": null
+    },
+    "earthquake.dice": {
+        "time": 0.02
+    },
+    "emdec6g.dice": {
+        "time": 0.33
+    },
+    "fire_alarm.dice": {
+        "time": 0.02
+    },
+    "hailfinder.dice": {
+        "time": 1.85
+    },
+    "hepar2.dice": {
+        "time": 0.07
+    },
+    "insurance.dice": {
+        "time": 0.11
+    },
+    "link.dice": {
+        "time": null
+    },
+    "mildew.dice": {
+        "time": null
+    },
+    "moissac3.dice": {
+        "time": null
+    },
+    "munin.dice": {
+        "time": null
+    },
+    "munin1.dice": {
+        "time": null
+    },
+    "munin2.dice": {
+        "time": null
+    },
+    "munin3.dice": {
+        "time": null
+    },
+    "munin4.dice": {
+        "time": null
+    },
+    "pathfinder.dice": {
+        "time": 4.4
+    },
+    "pigs.dice": {
+        "time": 9.83
+    },
+    "sachs.dice": {
+        "time": 0.36
+    },
+    "spect.dice": {
+        "time": 0.07
+    },
+    "survey.dice": {
+        "time": 0.03
+    },
+    "tcc4e.dice": {
+        "time": 0.08
+    },
+    "water.dice": {
+        "time": null
+    },
+    "win95pts.dice": {
+        "time": 0.48
+    }
+}
