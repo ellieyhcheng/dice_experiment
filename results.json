@@ -1,119 +1,444 @@
 {
-    "alarm-alt.dice": {
-        "time": 0.24
+    "timeouts": {
+        "no opts": 1,
+        "det": null,
+        "fh + det + be": null,
+        "sbk + det + be": null,
+        "sbk + fh + det + be": null,
+        "ea + det + be": null,
+        "ea + fh + det + be": null,
+        "ea + sbk + det + be": null,
+        "eg + sbk + fh + det + be": null
     },
-    "alarm-safer.dice": {
-        "time": 0.28
-    },
-    "alarm.dice": {
-        "time": 0.29
-    },
-    "andes.dice": {
-        "time": null
-    },
-    "asia.dice": {
-        "time": 0.03
-    },
-    "barley.dice": {
-        "time": null
-    },
-    "BN_28.dice": {
-        "time": null
-    },
-    "BN_78.dice": {
-        "time": 2.33
-    },
-    "BN_79.dice": {
-        "time": null
-    },
-    "cancer.dice": {
-        "time": 0.04
-    },
-    "child.dice": {
-        "time": 0.02
-    },
-    "cpcs54.dice": {
-        "time": 1.51
-    },
-    "diabetes.dice": {
-        "time": null
-    },
-    "diagnose_a.dice": {
-        "time": 5.71
-    },
-    "diagnose_a_multi.dice": {
-        "time": 5.25
-    },
-    "diagnose_b.dice": {
-        "time": null
-    },
-    "diagnose_b_multi.dice": {
-        "time": null
-    },
-    "earthquake.dice": {
-        "time": 0.02
-    },
-    "emdec6g.dice": {
-        "time": 0.33
-    },
-    "fire_alarm.dice": {
-        "time": 0.02
-    },
-    "hailfinder.dice": {
-        "time": 1.85
-    },
-    "hepar2.dice": {
-        "time": 0.07
-    },
-    "insurance.dice": {
-        "time": 0.11
-    },
-    "link.dice": {
-        "time": null
-    },
-    "mildew.dice": {
-        "time": null
-    },
-    "moissac3.dice": {
-        "time": null
-    },
-    "munin.dice": {
-        "time": null
-    },
-    "munin1.dice": {
-        "time": null
-    },
-    "munin2.dice": {
-        "time": null
-    },
-    "munin3.dice": {
-        "time": null
-    },
-    "munin4.dice": {
-        "time": null
-    },
-    "pathfinder.dice": {
-        "time": 4.4
-    },
-    "pigs.dice": {
-        "time": 9.83
-    },
-    "sachs.dice": {
-        "time": 0.36
-    },
-    "spect.dice": {
-        "time": 0.07
-    },
-    "survey.dice": {
-        "time": 0.03
-    },
-    "tcc4e.dice": {
-        "time": 0.08
-    },
-    "water.dice": {
-        "time": null
-    },
-    "win95pts.dice": {
-        "time": 0.48
+    "results": {
+        "alarm-alt.dice": {
+            "time": {
+                "no opts": null
+            },
+            "size": {
+                "no opts": null
+            },
+            "calls": {
+                "no opts": null
+            }
+        },
+        "alarm-safer.dice": {
+            "time": {
+                "no opts": null
+            },
+            "size": {
+                "no opts": null
+            },
+            "calls": {
+                "no opts": null
+            }
+        },
+        "alarm.dice": {
+            "time": {
+                "no opts": 0.82
+            },
+            "size": {
+                "no opts": null
+            },
+            "calls": {
+                "no opts": null
+            }
+        },
+        "andes.dice": {
+            "time": {
+                "no opts": null
+            },
+            "size": {
+                "no opts": null
+            },
+            "calls": {
+                "no opts": null
+            }
+        },
+        "asia.dice": {
+            "time": {
+                "no opts": 0.09
+            },
+            "size": {
+                "no opts": 70
+            },
+            "calls": {
+                "no opts": 411
+            }
+        },
+        "barley.dice": {
+            "time": {
+                "no opts": null
+            },
+            "size": {
+                "no opts": null
+            },
+            "calls": {
+                "no opts": null
+            }
+        },
+        "BN_28.dice": {
+            "time": {
+                "no opts": null
+            },
+            "size": {
+                "no opts": null
+            },
+            "calls": {
+                "no opts": null
+            }
+        },
+        "BN_78.dice": {
+            "time": {
+                "no opts": null
+            },
+            "size": {
+                "no opts": null
+            },
+            "calls": {
+                "no opts": null
+            }
+        },
+        "BN_79.dice": {
+            "time": {
+                "no opts": null
+            },
+            "size": {
+                "no opts": null
+            },
+            "calls": {
+                "no opts": null
+            }
+        },
+        "cancer.dice": {
+            "time": {
+                "no opts": 0.11
+            },
+            "size": {
+                "no opts": 44
+            },
+            "calls": {
+                "no opts": 379
+            }
+        },
+        "child.dice": {
+            "time": {
+                "no opts": 0.36
+            },
+            "size": {
+                "no opts": 2542
+            },
+            "calls": {
+                "no opts": 42966
+            }
+        },
+        "cpcs54.dice": {
+            "time": {
+                "no opts": null
+            },
+            "size": {
+                "no opts": null
+            },
+            "calls": {
+                "no opts": null
+            }
+        },
+        "diabetes.dice": {
+            "time": {
+                "no opts": null
+            },
+            "size": {
+                "no opts": null
+            },
+            "calls": {
+                "no opts": null
+            }
+        },
+        "diagnose_a.dice": {
+            "time": {
+                "no opts": null
+            },
+            "size": {
+                "no opts": null
+            },
+            "calls": {
+                "no opts": null
+            }
+        },
+        "diagnose_a_multi.dice": {
+            "time": {
+                "no opts": null
+            },
+            "size": {
+                "no opts": null
+            },
+            "calls": {
+                "no opts": null
+            }
+        },
+        "diagnose_b.dice": {
+            "time": {
+                "no opts": null
+            },
+            "size": {
+                "no opts": null
+            },
+            "calls": {
+                "no opts": null
+            }
+        },
+        "diagnose_b_multi.dice": {
+            "time": {
+                "no opts": null
+            },
+            "size": {
+                "no opts": null
+            },
+            "calls": {
+                "no opts": null
+            }
+        },
+        "earthquake.dice": {
+            "time": {
+                "no opts": 0.1
+            },
+            "size": {
+                "no opts": 29
+            },
+            "calls": {
+                "no opts": 141
+            }
+        },
+        "emdec6g.dice": {
+            "time": {
+                "no opts": null
+            },
+            "size": {
+                "no opts": null
+            },
+            "calls": {
+                "no opts": null
+            }
+        },
+        "fire_alarm.dice": {
+            "time": {
+                "no opts": 0.09
+            },
+            "size": {
+                "no opts": 34
+            },
+            "calls": {
+                "no opts": 185
+            }
+        },
+        "hailfinder.dice": {
+            "time": {
+                "no opts": null
+            },
+            "size": {
+                "no opts": null
+            },
+            "calls": {
+                "no opts": null
+            }
+        },
+        "hepar2.dice": {
+            "time": {
+                "no opts": 0.47
+            },
+            "size": {
+                "no opts": 36375
+            },
+            "calls": {
+                "no opts": 609759
+            }
+        },
+        "insurance.dice": {
+            "time": {
+                "no opts": null
+            },
+            "size": {
+                "no opts": null
+            },
+            "calls": {
+                "no opts": null
+            }
+        },
+        "link.dice": {
+            "time": {
+                "no opts": null
+            },
+            "size": {
+                "no opts": null
+            },
+            "calls": {
+                "no opts": null
+            }
+        },
+        "mildew.dice": {
+            "time": {
+                "no opts": null
+            },
+            "size": {
+                "no opts": null
+            },
+            "calls": {
+                "no opts": null
+            }
+        },
+        "moissac3.dice": {
+            "time": {
+                "no opts": null
+            },
+            "size": {
+                "no opts": null
+            },
+            "calls": {
+                "no opts": null
+            }
+        },
+        "munin.dice": {
+            "time": {
+                "no opts": null
+            },
+            "size": {
+                "no opts": null
+            },
+            "calls": {
+                "no opts": null
+            }
+        },
+        "munin1.dice": {
+            "time": {
+                "no opts": null
+            },
+            "size": {
+                "no opts": null
+            },
+            "calls": {
+                "no opts": null
+            }
+        },
+        "munin2.dice": {
+            "time": {
+                "no opts": null
+            },
+            "size": {
+                "no opts": null
+            },
+            "calls": {
+                "no opts": null
+            }
+        },
+        "munin3.dice": {
+            "time": {
+                "no opts": null
+            },
+            "size": {
+                "no opts": null
+            },
+            "calls": {
+                "no opts": null
+            }
+        },
+        "munin4.dice": {
+            "time": {
+                "no opts": null
+            },
+            "size": {
+                "no opts": null
+            },
+            "calls": {
+                "no opts": null
+            }
+        },
+        "pathfinder.dice": {
+            "time": {
+                "no opts": null
+            },
+            "size": {
+                "no opts": null
+            },
+            "calls": {
+                "no opts": null
+            }
+        },
+        "pigs.dice": {
+            "time": {
+                "no opts": null
+            },
+            "size": {
+                "no opts": null
+            },
+            "calls": {
+                "no opts": null
+            }
+        },
+        "sachs.dice": {
+            "time": {
+                "no opts": 0.19
+            },
+            "size": {
+                "no opts": 838
+            },
+            "calls": {
+                "no opts": 13349
+            }
+        },
+        "spect.dice": {
+            "time": {
+                "no opts": 0.1
+            },
+            "size": {
+                "no opts": 69
+            },
+            "calls": {
+                "no opts": 3568
+            }
+        },
+        "survey.dice": {
+            "time": {
+                "no opts": 0.14
+            },
+            "size": {
+                "no opts": 94
+            },
+            "calls": {
+                "no opts": 692
+            }
+        },
+        "tcc4e.dice": {
+            "time": {
+                "no opts": 0.4
+            },
+            "size": {
+                "no opts": 3112
+            },
+            "calls": {
+                "no opts": 570753
+            }
+        },
+        "water.dice": {
+            "time": {
+                "no opts": null
+            },
+            "size": {
+                "no opts": null
+            },
+            "calls": {
+                "no opts": null
+            }
+        },
+        "win95pts.dice": {
+            "time": {
+                "no opts": 0.36
+            },
+            "size": {
+                "no opts": 75182
+            },
+            "calls": {
+                "no opts": 356446
+            }
+        }
     }
 }
