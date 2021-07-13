@@ -236,30 +236,35 @@ def main():
     
     old_results = old_data['results']
 
-    table = Template("""\\begin{tabular}{$alignments}
+    table = Template("""\\begin{table}[H]
+\\caption{$caption}
+\\begin{tabular}{$alignments}
 \\toprule
 Benchmarks & $columns \\\\
 \\midrule
 $rows
 \\bottomrule
-\\end{tabular}""")
+\\end{tabular}
+\\end{table}""")
 
-    fields = [f for f in Fields]
-    columns = " & ".join(fields)
-    columns = columns.capitalize()
-    alignments = 'l' + 'r' * len(fields)
-    rows = []
-    for filename in old_results.keys():
-      cols = ['\\textsc{' + filename.split('.')[0].replace('_', '\_') + '}']
+    for f in Fields:
+      modes = [m for m in Modes]
+      columns = " & ".join(modes)
+      alignments = 'l' + 'r' * len(modes)
+      rows = []
+
+      for filename in old_results.keys():
+        cols = ['\\textsc{' + filename.split('.')[0].replace('_', '\_') + '}']
       
-      for field in fields:
-        cols.append('%.2f' % old_results[filename][field] if old_results[filename][field] else 'N/A')
+        for m in modes:
+          cols.append('%.2f' % old_results[filename][f][m] if m in old_results[filename][f] and old_results[filename][f][m] else 'N/A')
 
-      rows.append(' & '.join(cols) + ' \\\\')
+        rows.append(' & '.join(cols) + ' \\\\')
     
-    rows = '\n'.join(rows)
+      rows = '\n'.join(rows)
 
-    print(table.substitute(alignments=alignments, columns=columns, rows=rows))
+      caption = '%s results' % f
+      print(table.substitute(caption=caption, alignments=alignments, columns=columns, rows=rows))
     
 
   if args.plot:
@@ -271,26 +276,40 @@ $rows
     
     old_results = old_data['results']
 
-    y_data = []
-    y_timeouts = []
-    for filename in old_results.keys():
-      if old_results[filename][Fields.TIME]:
-        y_data.append(old_results[filename][Fields.TIME])
-      else:
-        y_timeouts.append(old_data['timeout'])
+    colors = [
+      'tab:blue', 
+      'tab:orange', 
+      'tab:green', 
+      'tab:red', 
+      'tab:purple', 
+      'tab:brown', 
+      'tab:pink', 
+      'tab:gray', 
+      'tab:olive'
+    ]
 
-    y_data.sort()
+    for m, color in zip(Modes, colors):
+      y_data = []
+      y_timeouts = []
+      for filename in old_results.keys():
+        if m in old_results[filename][Fields.TIME] and old_results[filename][Fields.TIME][m]:
+          y_data.append(old_results[filename][Fields.TIME][m])
+        else:
+          y_timeouts.append(old_data['timeouts'][m])
 
-    y_timeouts = y_data[-1:] + y_timeouts
+      y_data.sort()
 
-    x_data = [x for x in range(len(y_data))]
-    x_timeouts = [x + len(x_data) - 1 for x in range(len(y_timeouts))]
+      y_timeouts = y_data[-1:] + y_timeouts
 
-    plt.plot(x_data, y_data, 'ob-')
-    plt.plot(x_timeouts, y_timeouts, 'xb-')
+      x_data = [x for x in range(len(y_data))]
+      x_timeouts = [x + len(x_data) - 1 for x in range(len(y_timeouts))]
+
+      plt.plot(x_data, y_data, 'o-', color=color, label=m)
+      plt.plot(x_timeouts, y_timeouts, 'x-', color=color)
 
     plt.xlabel('Benchmarks')
     plt.ylabel('Time (s)')
+    plt.legend()
 
     plt.grid(True, ls=':')
 
