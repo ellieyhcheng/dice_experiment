@@ -1,443 +1,854 @@
 {
     "timeouts": {
-        "no opts": 1,
-        "det": null,
-        "fh + det + be": null,
-        "sbk + det + be": null,
-        "sbk + fh + det + be": null,
-        "ea + det + be": null,
-        "ea + fh + det + be": null,
-        "ea + sbk + det + be": null,
-        "eg + sbk + fh + det + be": null
+        "no opts": 1200,
+        "det": 1200,
+        "fh + det + be": 1200,
+        "sbk + det + be": 1200,
+        "sbk + fh + det + be": 1200,
+        "ea + det + be": 1200,
+        "ea + fh + det + be": 1200,
+        "ea + sbk + det + be": 1200,
+        "eg + sbk + fh + det + be": 1200
     },
     "results": {
-        "alarm-alt.dice": {
-            "time": {
-                "no opts": null
-            },
-            "size": {
-                "no opts": null
-            },
-            "calls": {
-                "no opts": null
-            }
-        },
-        "alarm-safer.dice": {
-            "time": {
-                "no opts": null
-            },
-            "size": {
-                "no opts": null
-            },
-            "calls": {
-                "no opts": null
-            }
-        },
         "alarm.dice": {
             "time": {
-                "no opts": 0.82
+                "no opts": 0.15023326873779297,
+                "det": 0.12009692192077637,
+                "fh + det + be": 0.07100558280944824,
+                "sbk + det + be": 0.16561555862426758,
+                "sbk + fh + det + be": 0.0966954231262207,
+                "ea + det + be": 0.15067625045776367,
+                "ea + fh + det + be": 0.05999016761779785,
+                "ea + sbk + det + be": 0.22669482231140137,
+                "eg + sbk + fh + det + be": 0.11588549613952637
             },
             "size": {
-                "no opts": null
+                "no opts": 298867,
+                "det": 293903,
+                "fh + det + be": 82469,
+                "sbk + det + be": 294042,
+                "sbk + fh + det + be": 132073,
+                "ea + det + be": 254766,
+                "ea + fh + det + be": 82469,
+                "ea + sbk + det + be": 294042,
+                "eg + sbk + fh + det + be": 132073
             },
             "calls": {
-                "no opts": null
+                "no opts": 1194901,
+                "det": 1177801,
+                "fh + det + be": 530084,
+                "sbk + det + be": 1690229,
+                "sbk + fh + det + be": 868225,
+                "ea + det + be": 1274828,
+                "ea + fh + det + be": 415545,
+                "ea + sbk + det + be": 1490054,
+                "eg + sbk + fh + det + be": 636659
             }
         },
         "andes.dice": {
             "time": {
-                "no opts": null
+                "no opts": 56.7319,
+                "det": 32.4824,
+                "fh + det + be": 3.435,
+                "sbk + det + be": 6.6637,
+                "sbk + fh + det + be": 3.4115,
+                "ea + det + be": 89.5524,
+                "ea + fh + det + be": 12.5671,
+                "ea + sbk + det + be": 90.4507,
+                "eg + sbk + fh + det + be": 7.2641
             },
             "size": {
-                "no opts": null
+                "no opts": 87119041,
+                "det": 48539576,
+                "fh + det + be": 3301994,
+                "sbk + det + be": 8520656,
+                "sbk + fh + det + be": 3301994,
+                "ea + det + be": 8520656,
+                "ea + fh + det + be": 3301994,
+                "ea + sbk + det + be": 8520656,
+                "eg + sbk + fh + det + be": 3301994
             },
             "calls": {
-                "no opts": null
+                "no opts": 368122505,
+                "det": 251059900,
+                "fh + det + be": 37411196,
+                "sbk + det + be": 69678578,
+                "sbk + fh + det + be": 37411351,
+                "ea + det + be": 2078215088,
+                "ea + fh + det + be": 332319508,
+                "ea + sbk + det + be": 1995271060,
+                "eg + sbk + fh + det + be": 166471812
             }
         },
         "asia.dice": {
             "time": {
-                "no opts": 0.09
+                "no opts": 0.05978107452392578,
+                "det": 0.03256702423095703,
+                "fh + det + be": 0.029581308364868164,
+                "sbk + det + be": 0.027921199798583984,
+                "sbk + fh + det + be": 0.025448322296142578,
+                "ea + det + be": 0.02347850799560547,
+                "ea + fh + det + be": 0.022812843322753906,
+                "ea + sbk + det + be": 0.022838592529296875,
+                "eg + sbk + fh + det + be": 0.022418975830078125
             },
             "size": {
-                "no opts": 70
+                "no opts": 70,
+                "det": 41,
+                "fh + det + be": 41,
+                "sbk + det + be": 41,
+                "sbk + fh + det + be": 41,
+                "ea + det + be": 41,
+                "ea + fh + det + be": 41,
+                "ea + sbk + det + be": 41,
+                "eg + sbk + fh + det + be": 41
             },
             "calls": {
-                "no opts": 411
+                "no opts": 411,
+                "det": 386,
+                "fh + det + be": 377,
+                "sbk + det + be": 377,
+                "sbk + fh + det + be": 377,
+                "ea + det + be": 88,
+                "ea + fh + det + be": 88,
+                "ea + sbk + det + be": 88,
+                "eg + sbk + fh + det + be": 88
             }
         },
         "barley.dice": {
             "time": {
-                "no opts": null
+                "no opts": null,
+                "det": null,
+                "fh + det + be": null,
+                "sbk + det + be": null,
+                "sbk + fh + det + be": null,
+                "ea + det + be": null,
+                "ea + fh + det + be": null,
+                "ea + sbk + det + be": null,
+                "eg + sbk + fh + det + be": null
             },
             "size": {
-                "no opts": null
+                "no opts": null,
+                "det": null,
+                "fh + det + be": null,
+                "sbk + det + be": null,
+                "sbk + fh + det + be": null,
+                "ea + det + be": null,
+                "ea + fh + det + be": null,
+                "ea + sbk + det + be": null,
+                "eg + sbk + fh + det + be": null
             },
             "calls": {
-                "no opts": null
-            }
-        },
-        "BN_28.dice": {
-            "time": {
-                "no opts": null
-            },
-            "size": {
-                "no opts": null
-            },
-            "calls": {
-                "no opts": null
-            }
-        },
-        "BN_78.dice": {
-            "time": {
-                "no opts": null
-            },
-            "size": {
-                "no opts": null
-            },
-            "calls": {
-                "no opts": null
-            }
-        },
-        "BN_79.dice": {
-            "time": {
-                "no opts": null
-            },
-            "size": {
-                "no opts": null
-            },
-            "calls": {
-                "no opts": null
+                "no opts": null,
+                "det": null,
+                "fh + det + be": null,
+                "sbk + det + be": null,
+                "sbk + fh + det + be": null,
+                "ea + det + be": null,
+                "ea + fh + det + be": null,
+                "ea + sbk + det + be": null,
+                "eg + sbk + fh + det + be": null
             }
         },
         "cancer.dice": {
             "time": {
-                "no opts": 0.11
+                "no opts": 0.044533491134643555,
+                "det": 0.03299903869628906,
+                "fh + det + be": 0.02970409393310547,
+                "sbk + det + be": 0.027900218963623047,
+                "sbk + fh + det + be": 0.02585577964782715,
+                "ea + det + be": 0.023633241653442383,
+                "ea + fh + det + be": 0.022707462310791016,
+                "ea + sbk + det + be": 0.022285938262939453,
+                "eg + sbk + fh + det + be": 0.02244281768798828
             },
             "size": {
-                "no opts": 44
+                "no opts": 44,
+                "det": 43,
+                "fh + det + be": 31,
+                "sbk + det + be": 44,
+                "sbk + fh + det + be": 35,
+                "ea + det + be": 43,
+                "ea + fh + det + be": 31,
+                "ea + sbk + det + be": 44,
+                "eg + sbk + fh + det + be": 35
             },
             "calls": {
-                "no opts": 379
+                "no opts": 379,
+                "det": 385,
+                "fh + det + be": 385,
+                "sbk + det + be": 488,
+                "sbk + fh + det + be": 485,
+                "ea + det + be": 128,
+                "ea + fh + det + be": 122,
+                "ea + sbk + det + be": 147,
+                "eg + sbk + fh + det + be": 145
             }
         },
         "child.dice": {
             "time": {
-                "no opts": 0.36
+                "no opts": 0.05315446853637695,
+                "det": 0.04032158851623535,
+                "fh + det + be": 0.038123369216918945,
+                "sbk + det + be": 0.03352165222167969,
+                "sbk + fh + det + be": 0.031179189682006836,
+                "ea + det + be": 0.028307199478149414,
+                "ea + fh + det + be": 0.02861166000366211,
+                "ea + sbk + det + be": 0.02824687957763672,
+                "eg + sbk + fh + det + be": 0.028522253036499023
             },
             "size": {
-                "no opts": 2542
+                "no opts": 2542,
+                "det": 2273,
+                "fh + det + be": 1696,
+                "sbk + det + be": 2269,
+                "sbk + fh + det + be": 1809,
+                "ea + det + be": 2112,
+                "ea + fh + det + be": 1696,
+                "ea + sbk + det + be": 2269,
+                "eg + sbk + fh + det + be": 1809
             },
             "calls": {
-                "no opts": 42966
-            }
-        },
-        "cpcs54.dice": {
-            "time": {
-                "no opts": null
-            },
-            "size": {
-                "no opts": null
-            },
-            "calls": {
-                "no opts": null
+                "no opts": 42966,
+                "det": 42826,
+                "fh + det + be": 41149,
+                "sbk + det + be": 52097,
+                "sbk + fh + det + be": 51895,
+                "ea + det + be": 14481,
+                "ea + fh + det + be": 12825,
+                "ea + sbk + det + be": 15355,
+                "eg + sbk + fh + det + be": 13564
             }
         },
         "diabetes.dice": {
             "time": {
-                "no opts": null
+                "no opts": null,
+                "det": null,
+                "fh + det + be": null,
+                "sbk + det + be": null,
+                "sbk + fh + det + be": null,
+                "ea + det + be": null,
+                "ea + fh + det + be": null,
+                "ea + sbk + det + be": null,
+                "eg + sbk + fh + det + be": null
             },
             "size": {
-                "no opts": null
+                "no opts": null,
+                "det": null,
+                "fh + det + be": null,
+                "sbk + det + be": null,
+                "sbk + fh + det + be": null,
+                "ea + det + be": null,
+                "ea + fh + det + be": null,
+                "ea + sbk + det + be": null,
+                "eg + sbk + fh + det + be": null
             },
             "calls": {
-                "no opts": null
-            }
-        },
-        "diagnose_a.dice": {
-            "time": {
-                "no opts": null
-            },
-            "size": {
-                "no opts": null
-            },
-            "calls": {
-                "no opts": null
-            }
-        },
-        "diagnose_a_multi.dice": {
-            "time": {
-                "no opts": null
-            },
-            "size": {
-                "no opts": null
-            },
-            "calls": {
-                "no opts": null
-            }
-        },
-        "diagnose_b.dice": {
-            "time": {
-                "no opts": null
-            },
-            "size": {
-                "no opts": null
-            },
-            "calls": {
-                "no opts": null
-            }
-        },
-        "diagnose_b_multi.dice": {
-            "time": {
-                "no opts": null
-            },
-            "size": {
-                "no opts": null
-            },
-            "calls": {
-                "no opts": null
+                "no opts": null,
+                "det": null,
+                "fh + det + be": null,
+                "sbk + det + be": null,
+                "sbk + fh + det + be": null,
+                "ea + det + be": null,
+                "ea + fh + det + be": null,
+                "ea + sbk + det + be": null,
+                "eg + sbk + fh + det + be": null
             }
         },
         "earthquake.dice": {
             "time": {
-                "no opts": 0.1
+                "no opts": 0.03390789031982422,
+                "det": 0.03063488006591797,
+                "fh + det + be": 0.028049707412719727,
+                "sbk + det + be": 0.026665210723876953,
+                "sbk + fh + det + be": 0.02568340301513672,
+                "ea + det + be": 0.023819446563720703,
+                "ea + fh + det + be": 0.022829532623291016,
+                "ea + sbk + det + be": 0.022120237350463867,
+                "eg + sbk + fh + det + be": 0.021975278854370117
             },
             "size": {
-                "no opts": 29
+                "no opts": 29,
+                "det": 29,
+                "fh + det + be": 29,
+                "sbk + det + be": 29,
+                "sbk + fh + det + be": 29,
+                "ea + det + be": 29,
+                "ea + fh + det + be": 29,
+                "ea + sbk + det + be": 29,
+                "eg + sbk + fh + det + be": 29
             },
             "calls": {
-                "no opts": 141
-            }
-        },
-        "emdec6g.dice": {
-            "time": {
-                "no opts": null
-            },
-            "size": {
-                "no opts": null
-            },
-            "calls": {
-                "no opts": null
-            }
-        },
-        "fire_alarm.dice": {
-            "time": {
-                "no opts": 0.09
-            },
-            "size": {
-                "no opts": 34
-            },
-            "calls": {
-                "no opts": 185
+                "no opts": 141,
+                "det": 141,
+                "fh + det + be": 141,
+                "sbk + det + be": 141,
+                "sbk + fh + det + be": 141,
+                "ea + det + be": 41,
+                "ea + fh + det + be": 41,
+                "ea + sbk + det + be": 41,
+                "eg + sbk + fh + det + be": 41
             }
         },
         "hailfinder.dice": {
             "time": {
-                "no opts": null
+                "no opts": 1.6747,
+                "det": 0.4535,
+                "fh + det + be": 0.5314,
+                "sbk + det + be": 0.4182,
+                "sbk + fh + det + be": 0.4611,
+                "ea + det + be": 0.3775,
+                "ea + fh + det + be": 0.4906,
+                "ea + sbk + det + be": 0.5384,
+                "eg + sbk + fh + det + be": 0.5724
             },
             "size": {
-                "no opts": null
+                "no opts": 2635901,
+                "det": 147333,
+                "fh + det + be": 134994,
+                "sbk + det + be": 147097,
+                "sbk + fh + det + be": 136145,
+                "ea + det + be": 145917,
+                "ea + fh + det + be": 134994,
+                "ea + sbk + det + be": 147097,
+                "eg + sbk + fh + det + be": 136145
             },
             "calls": {
-                "no opts": null
+                "no opts": 12409797,
+                "det": 3256000,
+                "fh + det + be": 3590923,
+                "sbk + det + be": 4284378,
+                "sbk + fh + det + be": 4400952,
+                "ea + det + be": 3099063,
+                "ea + fh + det + be": 2876004,
+                "ea + sbk + det + be": 3132760,
+                "eg + sbk + fh + det + be": 2853292
             }
         },
         "hepar2.dice": {
             "time": {
-                "no opts": 0.47
+                "no opts": 0.13242769241333008,
+                "det": 0.07386541366577148,
+                "fh + det + be": 0.07495594024658203,
+                "sbk + det + be": 0.10814929008483887,
+                "sbk + fh + det + be": 0.11589264869689941,
+                "ea + det + be": 0.07283139228820801,
+                "ea + fh + det + be": 0.07743477821350098,
+                "ea + sbk + det + be": 0.09520101547241211,
+                "eg + sbk + fh + det + be": 0.09903883934020996
             },
             "size": {
-                "no opts": 36375
+                "no opts": 36375,
+                "det": 36246,
+                "fh + det + be": 36098,
+                "sbk + det + be": 36702,
+                "sbk + fh + det + be": 36642,
+                "ea + det + be": 36244,
+                "ea + fh + det + be": 36098,
+                "ea + sbk + det + be": 36702,
+                "eg + sbk + fh + det + be": 36642
             },
             "calls": {
-                "no opts": 609759
+                "no opts": 609759,
+                "det": 610533,
+                "fh + det + be": 654586,
+                "sbk + det + be": 664433,
+                "sbk + fh + det + be": 688542,
+                "ea + det + be": 359597,
+                "ea + fh + det + be": 358729,
+                "ea + sbk + det + be": 365151,
+                "eg + sbk + fh + det + be": 364473
             }
         },
         "insurance.dice": {
             "time": {
-                "no opts": null
+                "no opts": 0.17459607124328613,
+                "det": 0.08487629890441895,
+                "fh + det + be": 0.07220602035522461,
+                "sbk + det + be": 0.10044431686401367,
+                "sbk + fh + det + be": 0.1433866024017334,
+                "ea + det + be": 0.20827007293701172,
+                "ea + fh + det + be": 0.16195440292358398,
+                "ea + sbk + det + be": 0.21627283096313477,
+                "eg + sbk + fh + det + be": 0.1268455982208252
             },
             "size": {
-                "no opts": null
+                "no opts": 190242,
+                "det": 100841,
+                "fh + det + be": 71080,
+                "sbk + det + be": 107762,
+                "sbk + fh + det + be": 75778,
+                "ea + det + be": 90095,
+                "ea + fh + det + be": 71080,
+                "ea + sbk + det + be": 107762,
+                "eg + sbk + fh + det + be": 75778
             },
             "calls": {
-                "no opts": null
+                "no opts": 1461513,
+                "det": 1109031,
+                "fh + det + be": 871200,
+                "sbk + det + be": 1390585,
+                "sbk + fh + det + be": 1045249,
+                "ea + det + be": 1250662,
+                "ea + fh + det + be": 992473,
+                "ea + sbk + det + be": 1425749,
+                "eg + sbk + fh + det + be": 919059
             }
         },
         "link.dice": {
             "time": {
-                "no opts": null
+                "no opts": null,
+                "det": 263.3797,
+                "fh + det + be": 264.3189,
+                "sbk + det + be": 264.1467,
+                "sbk + fh + det + be": 267.3998,
+                "ea + det + be": 77.4866,
+                "ea + fh + det + be": 78.7524,
+                "ea + sbk + det + be": 78.2844,
+                "eg + sbk + fh + det + be": 78.5228
             },
             "size": {
-                "no opts": null
+                "no opts": null,
+                "det": 15117830,
+                "fh + det + be": 14964749,
+                "sbk + det + be": 15591736,
+                "sbk + fh + det + be": 15591736,
+                "ea + det + be": 14964749,
+                "ea + fh + det + be": 14964749,
+                "ea + sbk + det + be": 15591736,
+                "eg + sbk + fh + det + be": 15591736
             },
             "calls": {
-                "no opts": null
+                "no opts": null,
+                "det": 3664523083,
+                "fh + det + be": 3657297912,
+                "sbk + det + be": 3671819729,
+                "sbk + fh + det + be": 3682168830,
+                "ea + det + be": 1468705661,
+                "ea + fh + det + be": 1469110337,
+                "ea + sbk + det + be": 1429137502,
+                "eg + sbk + fh + det + be": 1422333016
             }
         },
         "mildew.dice": {
             "time": {
-                "no opts": null
+                "no opts": null,
+                "det": null,
+                "fh + det + be": null,
+                "sbk + det + be": null,
+                "sbk + fh + det + be": null,
+                "ea + det + be": null,
+                "ea + fh + det + be": null,
+                "ea + sbk + det + be": null,
+                "eg + sbk + fh + det + be": null
             },
             "size": {
-                "no opts": null
+                "no opts": null,
+                "det": null,
+                "fh + det + be": null,
+                "sbk + det + be": null,
+                "sbk + fh + det + be": null,
+                "ea + det + be": null,
+                "ea + fh + det + be": null,
+                "ea + sbk + det + be": null,
+                "eg + sbk + fh + det + be": null
             },
             "calls": {
-                "no opts": null
-            }
-        },
-        "moissac3.dice": {
-            "time": {
-                "no opts": null
-            },
-            "size": {
-                "no opts": null
-            },
-            "calls": {
-                "no opts": null
+                "no opts": null,
+                "det": null,
+                "fh + det + be": null,
+                "sbk + det + be": null,
+                "sbk + fh + det + be": null,
+                "ea + det + be": null,
+                "ea + fh + det + be": null,
+                "ea + sbk + det + be": null,
+                "eg + sbk + fh + det + be": null
             }
         },
         "munin.dice": {
             "time": {
-                "no opts": null
+                "no opts": null,
+                "det": 71.8028,
+                "fh + det + be": 47.014,
+                "sbk + det + be": 60.8652,
+                "sbk + fh + det + be": 34.2468,
+                "ea + det + be": 13.1834,
+                "ea + fh + det + be": 11.8617,
+                "ea + sbk + det + be": 8.8759,
+                "eg + sbk + fh + det + be": 7.507
             },
             "size": {
-                "no opts": null
+                "no opts": null,
+                "det": 4998135,
+                "fh + det + be": 3641351,
+                "sbk + det + be": 2607700,
+                "sbk + fh + det + be": 2037321,
+                "ea + det + be": 4528204,
+                "ea + fh + det + be": 3641351,
+                "ea + sbk + det + be": 2607700,
+                "eg + sbk + fh + det + be": 2037321
             },
             "calls": {
-                "no opts": null
+                "no opts": null,
+                "det": 1218323934,
+                "fh + det + be": 877246456,
+                "sbk + det + be": 998064087,
+                "sbk + fh + det + be": 649400312,
+                "ea + det + be": 76106215,
+                "ea + fh + det + be": 60426824,
+                "ea + sbk + det + be": 41801686,
+                "eg + sbk + fh + det + be": 32134846
             }
         },
         "munin1.dice": {
             "time": {
-                "no opts": null
+                "no opts": null,
+                "det": 49.7345,
+                "fh + det + be": 22.9498,
+                "sbk + det + be": 42.367,
+                "sbk + fh + det + be": 16.2697,
+                "ea + det + be": 14.3059,
+                "ea + fh + det + be": 8.231,
+                "ea + sbk + det + be": 7.6363,
+                "eg + sbk + fh + det + be": 3.8804
             },
             "size": {
-                "no opts": null
+                "no opts": null,
+                "det": 4844471,
+                "fh + det + be": 2508769,
+                "sbk + det + be": 2593657,
+                "sbk + fh + det + be": 1234028,
+                "ea + det + be": 4328101,
+                "ea + fh + det + be": 2508769,
+                "ea + sbk + det + be": 2593657,
+                "eg + sbk + fh + det + be": 1234028
             },
             "calls": {
-                "no opts": null
+                "no opts": null,
+                "det": 674832166,
+                "fh + det + be": 354422783,
+                "sbk + det + be": 571798444,
+                "sbk + fh + det + be": 266290725,
+                "ea + det + be": 85974043,
+                "ea + fh + det + be": 49081320,
+                "ea + sbk + det + be": 49560233,
+                "eg + sbk + fh + det + be": 23425203
             }
         },
         "munin2.dice": {
             "time": {
-                "no opts": null
+                "no opts": null,
+                "det": 248.7772,
+                "fh + det + be": 196.9649,
+                "sbk + det + be": 129.7207,
+                "sbk + fh + det + be": 85.8168,
+                "ea + det + be": 29.2625,
+                "ea + fh + det + be": 21.2629,
+                "ea + sbk + det + be": 14.7316,
+                "eg + sbk + fh + det + be": 10.7124
             },
             "size": {
-                "no opts": null
+                "no opts": null,
+                "det": 10324147,
+                "fh + det + be": 6571832,
+                "sbk + det + be": 4956304,
+                "sbk + fh + det + be": 3210204,
+                "ea + det + be": 9285498,
+                "ea + fh + det + be": 6571832,
+                "ea + sbk + det + be": 4956304,
+                "eg + sbk + fh + det + be": 3210204
             },
             "calls": {
-                "no opts": null
+                "no opts": null,
+                "det": 4168816664,
+                "fh + det + be": 3445709005,
+                "sbk + det + be": 2302859540,
+                "sbk + fh + det + be": 1567885510,
+                "ea + det + be": 150160094,
+                "ea + fh + det + be": 103522400,
+                "ea + sbk + det + be": 77170945,
+                "eg + sbk + fh + det + be": 47921063
             }
         },
         "munin3.dice": {
             "time": {
-                "no opts": null
+                "no opts": null,
+                "det": 554.6222,
+                "fh + det + be": 431.6172,
+                "sbk + det + be": 455.2052,
+                "sbk + fh + det + be": 249.2707,
+                "ea + det + be": 46.305,
+                "ea + fh + det + be": 40.8726,
+                "ea + sbk + det + be": 31.0706,
+                "eg + sbk + fh + det + be": 23.0606
             },
             "size": {
-                "no opts": null
+                "no opts": null,
+                "det": 14235596,
+                "fh + det + be": 11647660,
+                "sbk + det + be": 9680211,
+                "sbk + fh + det + be": 7077671,
+                "ea + det + be": 13528675,
+                "ea + fh + det + be": 11647660,
+                "ea + sbk + det + be": 9680211,
+                "eg + sbk + fh + det + be": 7077671
             },
             "calls": {
-                "no opts": null
+                "no opts": null,
+                "det": 10356773135,
+                "fh + det + be": 7632005952,
+                "sbk + det + be": 8011478288,
+                "sbk + fh + det + be": 4824669235,
+                "ea + det + be": 221166302,
+                "ea + fh + det + be": 193894476,
+                "ea + sbk + det + be": 146998196,
+                "eg + sbk + fh + det + be": 107068021
             }
         },
         "munin4.dice": {
             "time": {
-                "no opts": null
+                "no opts": null,
+                "det": 92.4432,
+                "fh + det + be": 67.7316,
+                "sbk + det + be": 76.615,
+                "sbk + fh + det + be": 51.5651,
+                "ea + det + be": 13.742,
+                "ea + fh + det + be": 12.7021,
+                "ea + sbk + det + be": 9.2508,
+                "eg + sbk + fh + det + be": 7.9032
             },
             "size": {
-                "no opts": null
+                "no opts": null,
+                "det": 5067973,
+                "fh + det + be": 3697525,
+                "sbk + det + be": 3000184,
+                "sbk + fh + det + be": 2197129,
+                "ea + det + be": 4643895,
+                "ea + fh + det + be": 3697525,
+                "ea + sbk + det + be": 3000184,
+                "eg + sbk + fh + det + be": 2197129
             },
             "calls": {
-                "no opts": null
+                "no opts": null,
+                "det": 1675188976,
+                "fh + det + be": 1309695843,
+                "sbk + det + be": 1400939672,
+                "sbk + fh + det + be": 1030487713,
+                "ea + det + be": 76815098,
+                "ea + fh + det + be": 60467520,
+                "ea + sbk + det + be": 46956760,
+                "eg + sbk + fh + det + be": 34562607
             }
         },
         "pathfinder.dice": {
             "time": {
-                "no opts": null
+                "no opts": 2.2814,
+                "det": 1.7348,
+                "fh + det + be": 2.5079,
+                "sbk + det + be": 5.0837,
+                "sbk + fh + det + be": 5.1941,
+                "ea + det + be": 2.2986,
+                "ea + fh + det + be": 1.9556,
+                "ea + sbk + det + be": 6.0176,
+                "eg + sbk + fh + det + be": 4.8705
             },
             "size": {
-                "no opts": null
+                "no opts": 571839,
+                "det": 67689,
+                "fh + det + be": 20156,
+                "sbk + det + be": 62684,
+                "sbk + fh + det + be": 20445,
+                "ea + det + be": 61157,
+                "ea + fh + det + be": 20156,
+                "ea + sbk + det + be": 62684,
+                "eg + sbk + fh + det + be": 20445
             },
             "calls": {
-                "no opts": null
+                "no opts": 23703619,
+                "det": 16702074,
+                "fh + det + be": 13750517,
+                "sbk + det + be": 16581865,
+                "sbk + fh + det + be": 9239898,
+                "ea + det + be": 10816980,
+                "ea + fh + det + be": 2198156,
+                "ea + sbk + det + be": 12394878,
+                "eg + sbk + fh + det + be": 2071815
             }
         },
         "pigs.dice": {
             "time": {
-                "no opts": null
+                "no opts": 2.3282,
+                "det": 1.8689,
+                "fh + det + be": 1.5796,
+                "sbk + det + be": 1.8516,
+                "sbk + fh + det + be": 1.5479,
+                "ea + det + be": 0.1733,
+                "ea + fh + det + be": 0.1982,
+                "ea + sbk + det + be": 0.1325,
+                "eg + sbk + fh + det + be": 0.1442
             },
             "size": {
-                "no opts": null
+                "no opts": 409226,
+                "det": 180124,
+                "fh + det + be": 140617,
+                "sbk + det + be": 179313,
+                "sbk + fh + det + be": 137896,
+                "ea + det + be": 180124,
+                "ea + fh + det + be": 140617,
+                "ea + sbk + det + be": 179313,
+                "eg + sbk + fh + det + be": 137896
             },
             "calls": {
-                "no opts": null
+                "no opts": 68653499,
+                "det": 56647064,
+                "fh + det + be": 47592036,
+                "sbk + det + be": 56976093,
+                "sbk + fh + det + be": 46692185,
+                "ea + det + be": 784954,
+                "ea + fh + det + be": 623091,
+                "ea + sbk + det + be": 776742,
+                "eg + sbk + fh + det + be": 603232
             }
         },
         "sachs.dice": {
             "time": {
-                "no opts": 0.19
+                "no opts": 0.03533673286437988,
+                "det": 0.02243971824645996,
+                "fh + det + be": 0.022189617156982422,
+                "sbk + det + be": 0.023236513137817383,
+                "sbk + fh + det + be": 0.023770570755004883,
+                "ea + det + be": 0.02147364616394043,
+                "ea + fh + det + be": 0.02178502082824707,
+                "ea + sbk + det + be": 0.021742582321166992,
+                "eg + sbk + fh + det + be": 0.022382020950317383
             },
             "size": {
-                "no opts": 838
+                "no opts": 838,
+                "det": 691,
+                "fh + det + be": 680,
+                "sbk + det + be": 837,
+                "sbk + fh + det + be": 825,
+                "ea + det + be": 691,
+                "ea + fh + det + be": 680,
+                "ea + sbk + det + be": 837,
+                "eg + sbk + fh + det + be": 825
             },
             "calls": {
-                "no opts": 13349
-            }
-        },
-        "spect.dice": {
-            "time": {
-                "no opts": 0.1
-            },
-            "size": {
-                "no opts": 69
-            },
-            "calls": {
-                "no opts": 3568
+                "no opts": 13349,
+                "det": 13644,
+                "fh + det + be": 14580,
+                "sbk + det + be": 18748,
+                "sbk + fh + det + be": 19546,
+                "ea + det + be": 6230,
+                "ea + fh + det + be": 6205,
+                "ea + sbk + det + be": 6673,
+                "eg + sbk + fh + det + be": 6653
             }
         },
         "survey.dice": {
             "time": {
-                "no opts": 0.14
+                "no opts": 0.019248485565185547,
+                "det": 0.017978191375732422,
+                "fh + det + be": 0.018010377883911133,
+                "sbk + det + be": 0.018268346786499023,
+                "sbk + fh + det + be": 0.019041061401367188,
+                "ea + det + be": 0.017697572708129883,
+                "ea + fh + det + be": 0.018126487731933594,
+                "ea + sbk + det + be": 0.018173933029174805,
+                "eg + sbk + fh + det + be": 0.017765522003173828
             },
             "size": {
-                "no opts": 94
+                "no opts": 94,
+                "det": 89,
+                "fh + det + be": 89,
+                "sbk + det + be": 93,
+                "sbk + fh + det + be": 93,
+                "ea + det + be": 89,
+                "ea + fh + det + be": 89,
+                "ea + sbk + det + be": 93,
+                "eg + sbk + fh + det + be": 93
             },
             "calls": {
-                "no opts": 692
-            }
-        },
-        "tcc4e.dice": {
-            "time": {
-                "no opts": 0.4
-            },
-            "size": {
-                "no opts": 3112
-            },
-            "calls": {
-                "no opts": 570753
+                "no opts": 692,
+                "det": 722,
+                "fh + det + be": 722,
+                "sbk + det + be": 993,
+                "sbk + fh + det + be": 993,
+                "ea + det + be": 345,
+                "ea + fh + det + be": 345,
+                "ea + sbk + det + be": 400,
+                "eg + sbk + fh + det + be": 400
             }
         },
         "water.dice": {
             "time": {
-                "no opts": null
+                "no opts": 27.0411,
+                "det": 1.4641,
+                "fh + det + be": 1.8951,
+                "sbk + det + be": 0.8885,
+                "sbk + fh + det + be": 0.8681,
+                "ea + det + be": 0.1439,
+                "ea + fh + det + be": 1.4908,
+                "ea + sbk + det + be": 0.1983,
+                "eg + sbk + fh + det + be": 0.8356
             },
             "size": {
-                "no opts": null
+                "no opts": 39494260,
+                "det": 44705,
+                "fh + det + be": 26714,
+                "sbk + det + be": 40173,
+                "sbk + fh + det + be": 24110,
+                "ea + det + be": 44703,
+                "ea + fh + det + be": 26714,
+                "ea + sbk + det + be": 40173,
+                "eg + sbk + fh + det + be": 24110
             },
             "calls": {
-                "no opts": null
+                "no opts": 225657961,
+                "det": 26151519,
+                "fh + det + be": 9678034,
+                "sbk + det + be": 15397730,
+                "sbk + fh + det + be": 5555173,
+                "ea + det + be": 280745,
+                "ea + fh + det + be": 197254,
+                "ea + sbk + det + be": 220049,
+                "eg + sbk + fh + det + be": 160874
             }
         },
         "win95pts.dice": {
             "time": {
-                "no opts": 0.36
+                "no opts": 0.08815574645996094,
+                "det": 0.0347592830657959,
+                "fh + det + be": 0.03144359588623047,
+                "sbk + det + be": 0.03060317039489746,
+                "sbk + fh + det + be": 0.0316774845123291,
+                "ea + det + be": 0.02748394012451172,
+                "ea + fh + det + be": 0.02819514274597168,
+                "ea + sbk + det + be": 0.028552770614624023,
+                "eg + sbk + fh + det + be": 0.02858734130859375
             },
             "size": {
-                "no opts": 75182
+                "no opts": 75182,
+                "det": 2546,
+                "fh + det + be": 982,
+                "sbk + det + be": 1545,
+                "sbk + fh + det + be": 982,
+                "ea + det + be": 1545,
+                "ea + fh + det + be": 982,
+                "ea + sbk + det + be": 1545,
+                "eg + sbk + fh + det + be": 982
             },
             "calls": {
-                "no opts": 356446
+                "no opts": 356446,
+                "det": 60815,
+                "fh + det + be": 43963,
+                "sbk + det + be": 48475,
+                "sbk + fh + det + be": 43963,
+                "ea + det + be": 3844,
+                "ea + fh + det + be": 2950,
+                "ea + sbk + det + be": 3844,
+                "eg + sbk + fh + det + be": 2950
             }
         }
     }

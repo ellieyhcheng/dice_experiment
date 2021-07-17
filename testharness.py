@@ -7,6 +7,7 @@ import re
 import matplotlib.pyplot as plt
 from string import Template
 from enum import Enum
+import time
 
 class Fields(str, Enum):
   TIME = 'time'
@@ -74,20 +75,16 @@ def run(file, dice_path, timeout, fields, modes):
       print('Mode:', mode)
 
       try:
-        p = subprocess.run(['/usr/bin/time', '-f', "%e", dice_path, file, '-skip-table'] + cmd, 
-          capture_output=True, timeout=timeout)
-
-        pattern = re.compile('^(\d+.?\d*)$')
-        matches = pattern.match(p.stderr.decode('utf-8'))
-        if matches:
-          results[Fields.TIME][mode] = float(matches.group(1))
-        else:
-          results[Fields.TIME][mode] = -1
-          print('ERROR:')
-          print(p.stderr.decode('utf-8'))
+        t1 = time.time()
+        p = subprocess.Popen([dice_path, file, '-skip-table'] + cmd, 
+          stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        out, err = p.communicate(timeout=timeout)
+        t2 = time.time()
+        results[Fields.TIME][mode] = round(t2 - t1, 4)
 
       except subprocess.TimeoutExpired:
         print('TIMEOUT')
+        p.terminate()
 
     print()
   
@@ -108,8 +105,9 @@ def run(file, dice_path, timeout, fields, modes):
       print('Mode:', mode)
 
       try:
-        p = subprocess.run(cmd + mode_cmd, capture_output=True, timeout=timeout)
-        output = p.stdout.decode('utf-8')
+        p = subprocess.Popen(cmd + mode_cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        out, err = p.communicate(timeout=timeout)
+        output = out.decode('utf-8')
         call_pattern = re.compile('================\[ Number of recursive calls \]================\s(\d+.?\d*)')
         size_pattern = re.compile('================\[ Final compiled BDD size \]================\s(\d+.?\d*)')
         
@@ -130,6 +128,7 @@ def run(file, dice_path, timeout, fields, modes):
 
       except subprocess.TimeoutExpired:
         print('TIMEOUT')
+        p.terminate()
 
     print()
 
