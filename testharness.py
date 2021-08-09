@@ -14,6 +14,9 @@ class Fields(str, Enum):
   SIZE = 'size'
   CALLS = 'calls'
 
+  def __str__(self):
+    return self.value
+
 class Modes(str, Enum):
   NOOPT = 'no opts'
   DET = 'det'
@@ -34,6 +37,22 @@ class Modes(str, Enum):
       return Modes[s]
     except KeyError:
       raise ValueError()
+
+  @staticmethod
+  def to_column(m):
+    mapping = {
+      Modes.NOOPT: 'No Opt',
+      Modes.DET: 'Det',
+      Modes.FH: 'FH',
+      Modes.SBK: 'SBK',
+      Modes.SBKFH: 'SBK+FH',
+      Modes.EA: 'Ea',
+      Modes.EAFH: 'Ea+FH',
+      Modes.EASBK: 'Ea+SBK',
+      Modes.EASBKFH: 'Ea+SBK+FH'
+    }
+    
+    return mapping[m]
 
 def get_mode_cmd(mode):
   if mode == Modes.NOOPT:
@@ -139,9 +158,10 @@ def main():
   parser = argparse.ArgumentParser(description="Test harness for Dice experiments.")
   parser.add_argument('-i', '--dir', type=str, nargs=1, help='directory of experiment Dice files')
   parser.add_argument('-d', '--dice', type=str, nargs=1, help='path to Dice')
-  parser.add_argument('-o', '--out', type=str, nargs=1, help='path to output file. Defaults to results.json')
+  parser.add_argument('-o', '--out', type=str, nargs='?', const='results.json', default='results.json', help='path to output file. Defaults to results.json')
   parser.add_argument('--table', action='store_true', help='prints data from output file as Latex table')
-  parser.add_argument('--plot', action='store_true', help='generate cactus plot')
+  parser.add_argument('--plot', type=str, nargs='?', const='cactus_plot.png', help='generate cactus plot. specify filename or default to cactus_plot.png')
+  parser.add_argument('--columns', nargs='+', type=Modes.from_string, choices=list(Modes), help='select modes to include in the table or plot')
 
   parser.add_argument('--timeout', type=int, nargs=1, help='sets timeout in seconds')
   parser.add_argument('-t', '--time', dest='fields', action='append_const', const=Fields.TIME, help='record time elapsed')
@@ -152,10 +172,7 @@ def main():
 
   args = parser.parse_args()
   
-  if args.out:
-    out = args.out[0]
-  else:
-    out = 'results.json'
+  out = args.out
 
   old_data = {
     'timeouts': {m:None for m in Modes},
@@ -247,22 +264,47 @@ $rows
 \\end{table}""")
 
     for f in Fields:
-      modes = [m for m in Modes]
-      columns = " & ".join(modes)
+      modes = args.columns or Modes
+      columns = " & ".join(map(Modes.to_column, modes))
       alignments = 'l' + 'r' * len(modes)
       rows = []
+      max_col_vals = {}
+
+      for filename in old_results.keys():
+        cols = []
+      
+        for m in modes:
+          if m in old_results[filename][f] and old_results[filename][f][m]:
+            cols.append(old_results[filename][f][m])
+
+        max_col_vals[filename] = min(cols) if cols else None
 
       for filename in old_results.keys():
         cols = ['\\textsc{' + filename.split('.')[0].replace('_', '\_') + '}']
       
         for m in modes:
-          cols.append('%.2f' % old_results[filename][f][m] if m in old_results[filename][f] and old_results[filename][f][m] else 'N/A')
+          if f == Fields.TIME:
+            if m in old_results[filename][f] and old_results[filename][f][m] and max_col_vals[filename]:
+              if round(old_results[filename][f][m], 2) == round(max_col_vals[filename], 2):
+                cols.append('\\textbf{%.2f}' % old_results[filename][f][m])
+              else:
+                cols.append('%.2f' % old_results[filename][f][m])
+            else:
+              cols.append('-')
+          else:
+            if m in old_results[filename][f] and old_results[filename][f][m] and max_col_vals[filename]:
+              if round(old_results[filename][f][m], 2) == round(max_col_vals[filename], 2):
+                cols.append('\\textbf{%s}' % "{:,}".format(old_results[filename][f][m]))
+              else:
+                cols.append("{:,}".format(old_results[filename][f][m]))
+            else:
+              cols.append('-')
 
         rows.append(' & '.join(cols) + ' \\\\')
     
       rows = '\n'.join(rows)
 
-      caption = '%s results' % f
+      caption = '%s Results' % str(f).capitalize()
       print(table.substitute(caption=caption, alignments=alignments, columns=columns, rows=rows))
     
 
@@ -287,7 +329,9 @@ $rows
       'tab:olive'
     ]
 
-    for m, color in zip(Modes, colors):
+    modes = args.columns or Modes
+
+    for m, color in zip(modes, colors):
       y_data = []
       y_timeouts = []
       for filename in old_results.keys():
@@ -312,8 +356,10 @@ $rows
 
     plt.grid(True, ls=':')
 
-    plt.savefig('cactus_plot.png', bbox_inches='tight')
-    print('Saved to %s' % 'cactus_plot.png')
+    filename = args.plot
+
+    plt.savefig(filename, bbox_inches='tight')
+    print('Saved to %s' % filename)
 
 if __name__ == '__main__':
   main()
