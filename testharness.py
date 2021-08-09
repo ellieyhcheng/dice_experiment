@@ -124,7 +124,7 @@ def run(file, dice_path, timeout, fields, modes):
           results[Fields.SIZE][mode] = -1
           results[Fields.CALLS][mode] = -1
           print('ERROR:')
-          print(p.stdout.decode('utf-8'))
+          print(output)
 
       except subprocess.TimeoutExpired:
         print('TIMEOUT')
