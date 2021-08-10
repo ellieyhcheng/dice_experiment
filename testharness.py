@@ -139,15 +139,27 @@ def run(file, dice_path, timeout, fields, modes):
         flip_matches = flip_pattern.search(output)
 
         if call_matches:
+          if not Fields.CALLS in results:
+            results[Fields.CALLS] = {}
           results[Fields.CALLS][mode] = int(float(call_matches.group(1)))
         
         if size_matches:
+          if not Fields.SIZE in results:
+            results[Fields.SIZE] = {}
           results[Fields.SIZE][mode] = int(float(size_matches.group(1)))
 
         if flip_matches:
+          if not Fields.SIZE in results:
+            results[Fields.SIZE] = {}
           results[Fields.FLIPS][mode] = int(float(flip_matches.group(1)))
 
         if not call_matches and not size_matches and not flip_matches:
+          if not Fields.CALLS in results:
+            results[Fields.CALLS] = {}
+          if not Fields.SIZE in results:
+            results[Fields.SIZE] = {}
+          if not Fields.SIZE in results:
+            results[Fields.SIZE] = {}
           results[Fields.SIZE][mode] = -1
           results[Fields.CALLS][mode] = -1
           results[Fields.FLIPS][mode] = -1
