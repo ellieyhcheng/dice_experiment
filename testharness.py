@@ -13,6 +13,7 @@ class Fields(str, Enum):
   TIME = 'time'
   SIZE = 'size'
   CALLS = 'calls'
+  FLIPS = 'flips'
 
   def __str__(self):
     return self.value
@@ -107,13 +108,15 @@ def run(file, dice_path, timeout, fields, modes):
 
     print()
   
-  if Fields.SIZE in fields or Fields.CALLS in fields:
-    print('Measuring BDD size and/or number of recursive calls...')
+  if Fields.SIZE in fields or Fields.CALLS or Fields.FLIPS in fields:
+    print('Measuring BDD size, number of recursive calls, and/or number of calls...')
     cmd = [dice_path, file, '-skip-table']
     if Fields.SIZE in fields:
       cmd.append('-show-size')
     if Fields.CALLS in fields:
       cmd.append('-num-recursive-calls')
+    if Fields.FLIPS in fields:
+      cmd.append('-show-flip-count')
 
     for mode in modes:
       mode_cmd = get_mode_cmd(mode)
@@ -129,9 +132,11 @@ def run(file, dice_path, timeout, fields, modes):
         output = out.decode('utf-8')
         call_pattern = re.compile('================\[ Number of recursive calls \]================\s(\d+.?\d*)')
         size_pattern = re.compile('================\[ Final compiled BDD size \]================\s(\d+.?\d*)')
+        flip_pattern = re.compile('================\[ Number of flips \]================\s(\d+.?\d*)')
         
         call_matches = call_pattern.search(output)
         size_matches = size_pattern.search(output)
+        flip_matches = flip_pattern.search(output)
 
         if call_matches:
           results[Fields.CALLS][mode] = int(float(call_matches.group(1)))
@@ -139,9 +144,13 @@ def run(file, dice_path, timeout, fields, modes):
         if size_matches:
           results[Fields.SIZE][mode] = int(float(size_matches.group(1)))
 
-        if not call_matches and not size_matches:
+        if flip_matches:
+          results[Fields.FLIPS][mode] = int(float(flip_matches.group(1)))
+
+        if not call_matches and not size_matches and not flip_matches:
           results[Fields.SIZE][mode] = -1
           results[Fields.CALLS][mode] = -1
+          results[Fields.FLIPS][mode] = -1
           print('ERROR:')
           print(output)
 
@@ -167,6 +176,7 @@ def main():
   parser.add_argument('-t', '--time', dest='fields', action='append_const', const=Fields.TIME, help='record time elapsed')
   parser.add_argument('-s', '--size', dest='fields', action='append_const', const=Fields.SIZE, help='record BDD size')
   parser.add_argument('-c', '--calls', dest='fields', action='append_const', const=Fields.CALLS, help='record number of recursive calls')
+  parser.add_argument('-f', '--flips', dest='fields', action='append_const', const=Fields.FLIPS, help='record number of flips')
 
   parser.add_argument('--modes', nargs='*', type=Modes.from_string, choices=list(Modes), help='select modes to run over')
 
@@ -232,6 +242,8 @@ def main():
     for filename in results.keys():
       if filename in old_results:
         for field in results[filename]:
+          if not field in old_results[filename]:
+            old_results[filename][field] = {}
           for mode in results[filename][field]:
             old_results[filename][field][mode] = results[filename][field][mode]
       else:
