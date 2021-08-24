@@ -61,19 +61,19 @@ def get_mode_cmd(mode):
   if mode == Modes.DET:
     return ['-determinism']
   if mode == Modes.FH:
-    return ['-determinism', '-flip-lifting', '-branch-elimination']
+    return ['-determinism', '-flip-hoisting', '-cross-table', '-branch-elimination']
   if mode == Modes.SBK:
     return ['-determinism', '-sbk-encoding', '-branch-elimination']
   if mode == Modes.SBKFH:
-    return ['-determinism', '-flip-lifting', '-sbk-encoding', '-branch-elimination']
+    return ['-determinism', '-flip-hoisting', '-cross-table', '-sbk-encoding', '-branch-elimination']
   if mode == Modes.EA:
     return ['-eager-eval', '-determinism', '-branch-elimination']
   if mode == Modes.EAFH:
-    return ['-eager-eval', '-flip-lifting', '-determinism', '-branch-elimination']
+    return ['-eager-eval', '-flip-hoisting', '-cross-table', '-determinism', '-branch-elimination']
   if mode == Modes.EASBK:
     return ['-eager-eval', '-sbk-encoding', '-determinism', '-branch-elimination']
   if mode == Modes.EASBKFH:
-    return ['-eager-eval', '-sbk-encoding', '-flip-lifting', '-determinism', '-branch-elimination']
+    return ['-eager-eval', '-sbk-encoding', '-flip-hoisting', '-cross-table', '-determinism', '-branch-elimination']
   
   return None
 
