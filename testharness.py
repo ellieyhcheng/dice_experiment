@@ -14,6 +14,8 @@ class Fields(str, Enum):
   SIZE = 'size'
   CALLS = 'calls'
   FLIPS = 'flips'
+  PARAMS = 'params'
+  DISTINCT = 'distinct'
 
   def __str__(self):
     return self.value
@@ -108,15 +110,22 @@ def run(file, dice_path, timeout, fields, modes):
 
     print()
   
-  if Fields.SIZE in fields or Fields.CALLS or Fields.FLIPS in fields:
+  if Fields.SIZE in fields or Fields.CALLS or Fields.FLIPS in fields \
+    or Fields.PARAMS in fields or Fields.DISTINCT in fields:
     print('Measuring BDD size, number of recursive calls, and/or number of calls...')
     cmd = [dice_path, file, '-skip-table']
     if Fields.SIZE in fields:
       cmd.append('-show-size')
     if Fields.CALLS in fields:
       cmd.append('-num-recursive-calls')
+
+    if not Fields.SIZE in fields and not Fields.CALLS in fields:
+      cmd.append('-no-compile')
+    
     if Fields.FLIPS in fields:
       cmd.append('-show-flip-count')
+    if Fields.PARAMS in fields:
+      cmd.append('-show-params')
 
     for mode in modes:
       mode_cmd = get_mode_cmd(mode)
@@ -133,10 +142,14 @@ def run(file, dice_path, timeout, fields, modes):
         call_pattern = re.compile('================\[ Number of recursive calls \]================\s(\d+.?\d*)')
         size_pattern = re.compile('================\[ Final compiled BDD size \]================\s(\d+.?\d*)')
         flip_pattern = re.compile('================\[ Number of flips \]================\s(\d+.?\d*)')
+        param_pattern = re.compile('================\[ Number of Parameters \]================\s(\d+.?\d*)')
+        distinct_pattern = re.compile('================\[ Number of Distinct Parameters \]================\s(\d+.?\d*)')
         
         call_matches = call_pattern.search(output)
         size_matches = size_pattern.search(output)
         flip_matches = flip_pattern.search(output)
+        param_matches = param_pattern.search(output)
+        distinct_matches = distinct_pattern.search(output)
 
         if call_matches:
           if not Fields.CALLS in results:
@@ -149,20 +162,36 @@ def run(file, dice_path, timeout, fields, modes):
           results[Fields.SIZE][mode] = int(float(size_matches.group(1)))
 
         if flip_matches:
-          if not Fields.SIZE in results:
-            results[Fields.SIZE] = {}
+          if not Fields.FLIPS in results:
+            results[Fields.FLIPS] = {}
           results[Fields.FLIPS][mode] = int(float(flip_matches.group(1)))
 
-        if not call_matches and not size_matches and not flip_matches:
+        if param_matches:
+          if not Fields.PARAMS in results:
+            results[Fields.PARAMS] = {}
+          results[Fields.PARAMS][mode] = int(float(param_matches.group(1)))
+
+        if distinct_matches:
+          if not Fields.DISTINCT in results:
+            results[Fields.DISTINCT] = {}
+          results[Fields.DISTINCT][mode] = int(float(distinct_matches.group(1)))
+
+        if not call_matches and not size_matches and not flip_matches and not param_matches:
           if not Fields.CALLS in results:
             results[Fields.CALLS] = {}
           if not Fields.SIZE in results:
             results[Fields.SIZE] = {}
-          if not Fields.SIZE in results:
-            results[Fields.SIZE] = {}
+          if not Fields.FLIPS in results:
+            results[Fields.FLIPS] = {}
+          if not Fields.PARAMS in results:
+            results[Fields.PARAMS] = {}
+          if not Fields.DISTINCT in results:
+            results[Fields.DISTINCT] = {}
           results[Fields.SIZE][mode] = -1
           results[Fields.CALLS][mode] = -1
           results[Fields.FLIPS][mode] = -1
+          results[Fields.PARAMS][mode] = -1
+          results[Fields.DISTINCT][mode] = -1
           print('ERROR:')
           print(output)
 
@@ -189,6 +218,8 @@ def main():
   parser.add_argument('-s', '--size', dest='fields', action='append_const', const=Fields.SIZE, help='record BDD size')
   parser.add_argument('-c', '--calls', dest='fields', action='append_const', const=Fields.CALLS, help='record number of recursive calls')
   parser.add_argument('-f', '--flips', dest='fields', action='append_const', const=Fields.FLIPS, help='record number of flips')
+  parser.add_argument('-p', '--params', dest='fields', action='append_const', const=Fields.PARAMS, help='record number of parameters')
+  parser.add_argument('-dp', '--distinct', dest='fields', action='append_const', const=Fields.DISTINCT, help='record number of distinct parameters')
 
   parser.add_argument('--modes', nargs='*', type=Modes.from_string, choices=list(Modes), help='select modes to run over')
 
@@ -276,7 +307,7 @@ def main():
     
     old_results = old_data['results']
 
-    table = Template("""\\begin{table}[H]
+    table = Template("""\\begin{table}[h]
 \\caption{$caption}
 \\begin{tabular}{$alignments}
 \\toprule
@@ -309,18 +340,24 @@ $rows
         for m in modes:
           if f == Fields.TIME:
             if m in old_results[filename][f] and old_results[filename][f][m] and max_col_vals[filename]:
-              if round(old_results[filename][f][m], 2) == round(max_col_vals[filename], 2):
-                cols.append('\\textbf{%.2f}' % old_results[filename][f][m])
+              if old_results[filename][f][m] == -1:
+                cols.append('*')
               else:
-                cols.append('%.2f' % old_results[filename][f][m])
+                if round(old_results[filename][f][m], 2) == round(max_col_vals[filename], 2):
+                  cols.append('\\textbf{%.2f}' % old_results[filename][f][m])
+                else:
+                  cols.append('%.2f' % old_results[filename][f][m])
             else:
               cols.append('-')
           else:
             if m in old_results[filename][f] and old_results[filename][f][m] and max_col_vals[filename]:
-              if round(old_results[filename][f][m], 2) == round(max_col_vals[filename], 2):
-                cols.append('\\textbf{%s}' % "{:,}".format(old_results[filename][f][m]))
+              if old_results[filename][f][m] == -1:
+                cols.append('*')
               else:
-                cols.append("{:,}".format(old_results[filename][f][m]))
+                if round(old_results[filename][f][m], 2) == round(max_col_vals[filename], 2):
+                  cols.append('\\textbf{%s}' % "{:,}".format(old_results[filename][f][m]))
+                else:
+                  cols.append("{:,}".format(old_results[filename][f][m]))
             else:
               cols.append('-')
 
