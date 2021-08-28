@@ -24,12 +24,17 @@ class Modes(str, Enum):
   NOOPT = 'no opts'
   DET = 'det'
   FH = 'fh + det + be'
+  FHCT = 'fh + ct + det + be'
   SBK = 'sbk + det + be'
   SBKFH = 'sbk + fh + det + be'
+  SBKFHCT = 'sbk + fh + ct + det + be'
+
   EA = 'ea + det + be'
   EAFH = 'ea + fh + det + be'
+  EAFHCT = 'ea + fh + ct + det + be'
   EASBK = 'ea + sbk + det + be'
   EASBKFH = 'eg + sbk + fh + det + be'
+  EASBKFHCT = 'eg + sbk + fh + ct + det + be'
 
   def __str__(self):
     return self.name
@@ -47,12 +52,16 @@ class Modes(str, Enum):
       Modes.NOOPT: 'No Opt',
       Modes.DET: 'Det',
       Modes.FH: 'FH',
+      Modes.FHCT: 'FHCT',
       Modes.SBK: 'SBK',
       Modes.SBKFH: 'SBK+FH',
+      Modes.SBKFHCT: 'SBK+FHCT',
       Modes.EA: 'Ea',
       Modes.EAFH: 'Ea+FH',
+      Modes.EAFHCT: 'Ea+FHCT',
       Modes.EASBK: 'Ea+SBK',
-      Modes.EASBKFH: 'Ea+SBK+FH'
+      Modes.EASBKFH: 'Ea+SBK+FH',
+      Modes.EASBKFHCT: 'Ea+SBK+FHCT'
     }
     
     return mapping[m]
@@ -63,18 +72,26 @@ def get_mode_cmd(mode):
   if mode == Modes.DET:
     return ['-determinism']
   if mode == Modes.FH:
+    return ['-determinism', '-flip-hoisting', '-branch-elimination']
+  if mode == Modes.FHCT:
     return ['-determinism', '-flip-hoisting', '-cross-table', '-branch-elimination']
   if mode == Modes.SBK:
     return ['-determinism', '-sbk-encoding', '-branch-elimination']
   if mode == Modes.SBKFH:
+    return ['-determinism', '-flip-hoisting', '-sbk-encoding', '-branch-elimination']
+  if mode == Modes.SBKFHCT:
     return ['-determinism', '-flip-hoisting', '-cross-table', '-sbk-encoding', '-branch-elimination']
   if mode == Modes.EA:
     return ['-eager-eval', '-determinism', '-branch-elimination']
   if mode == Modes.EAFH:
+    return ['-eager-eval', '-flip-hoisting', '-determinism', '-branch-elimination']
+  if mode == Modes.EAFHCT:
     return ['-eager-eval', '-flip-hoisting', '-cross-table', '-determinism', '-branch-elimination']
   if mode == Modes.EASBK:
     return ['-eager-eval', '-sbk-encoding', '-determinism', '-branch-elimination']
   if mode == Modes.EASBKFH:
+    return ['-eager-eval', '-sbk-encoding', '-flip-hoisting', '-determinism', '-branch-elimination']
+  if mode == Modes.EASBKFHCT:
     return ['-eager-eval', '-sbk-encoding', '-flip-hoisting', '-cross-table', '-determinism', '-branch-elimination']
   
   return None
