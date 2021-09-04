@@ -276,7 +276,35 @@ def main():
     with open(out, 'r') as f:
       old_data = json.load(f)
 
-  if args.dir:
+  if args.problog:
+    files = args.dir[0]
+    results = {}
+    if not os.path.isdir(files):
+      print('Invalid directory specified:', files)
+      exit(2)
+    else:
+      print('Experiment dir:', files)
+      print('Output file:', out)
+
+      if args.timeout:
+        print('Timeout:', args.timeout[0])
+        timeout = args.timeout[0]
+      else:
+        timeout = None
+
+      print()
+
+      for filename in os.listdir(files):
+        file = os.path.join(files, filename)
+        if os.path.isfile(file) and os.path.splitext(file)[-1].lower() == '.pl':
+          results[filename] = problog(file, timeout)
+
+      print()
+      
+    with open('problog_results.json', 'w') as f:
+      json.dump(results, f, indent=4)
+      
+  elif args.dir:
     files = args.dir[0]
     if not os.path.isdir(files):
       print('Invalid directory specified:', files)
@@ -336,34 +364,6 @@ def main():
       
     with open(out, 'w') as f:
       json.dump(old_data, f, indent=4)
-
-  if args.problog:
-    files = args.dir[0]
-    results = {}
-    if not os.path.isdir(files):
-      print('Invalid directory specified:', files)
-      exit(2)
-    else:
-      print('Experiment dir:', files)
-      print('Output file:', out)
-
-      if args.timeout:
-        print('Timeout:', args.timeout[0])
-        timeout = args.timeout[0]
-      else:
-        timeout = None
-
-      print()
-
-      for filename in os.listdir(files):
-        file = os.path.join(files, filename)
-        if os.path.isfile(file) and os.path.splitext(file)[-1].lower() == '.pl':
-          results[filename] = problog(file, timeout)
-
-      print()
-      
-    with open('problog_results.json', 'w') as f:
-      json.dump(results, f, indent=4)
 
   if args.table:
     print('========= Table =========')
