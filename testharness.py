@@ -220,6 +220,27 @@ def run(file, dice_path, timeout, fields, modes):
 
   return results
 
+def problog(file, timeout):
+  print('========================================')
+
+  print('File:', file)
+
+  print('Measuring time elapsed...')
+  try:
+    t1 = time.time()
+    p = subprocess.Popen(['problog', file], 
+      stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    out, err = p.communicate(timeout=timeout)
+    t2 = time.time()
+    result = round(t2 - t1, 4)
+    print()
+    return result
+
+  except subprocess.TimeoutExpired:
+    print('TIMEOUT')
+    p.terminate()
+    print()
+    return None
 
 def main():
   parser = argparse.ArgumentParser(description="Test harness for Dice experiments.")
@@ -237,6 +258,8 @@ def main():
   parser.add_argument('-f', '--flips', dest='fields', action='append_const', const=Fields.FLIPS, help='record number of flips')
   parser.add_argument('-p', '--params', dest='fields', action='append_const', const=Fields.PARAMS, help='record number of parameters')
   parser.add_argument('-dp', '--distinct', dest='fields', action='append_const', const=Fields.DISTINCT, help='record number of distinct parameters')
+
+  parser.add_argument('--problog', action='store_true', help='runs Problog programs')
 
   parser.add_argument('--modes', nargs='*', type=Modes.from_string, choices=list(Modes), help='select modes to run over')
 
@@ -314,7 +337,34 @@ def main():
     with open(out, 'w') as f:
       json.dump(old_data, f, indent=4)
 
-  
+  if args.problog:
+    files = args.dir[0]
+    results = {}
+    if not os.path.isdir(files):
+      print('Invalid directory specified:', files)
+      exit(2)
+    else:
+      print('Experiment dir:', files)
+      print('Output file:', out)
+
+      if args.timeout:
+        print('Timeout:', args.timeout[0])
+        timeout = args.timeout[0]
+      else:
+        timeout = None
+
+      print()
+
+      for filename in os.listdir(files):
+        file = os.path.join(files, filename)
+        if os.path.isfile(file) and os.path.splitext(file)[-1].lower() == '.pl':
+          results[filename] = problog(file, timeout)
+
+      print()
+      
+    with open('problog_results.json', 'w') as f:
+      json.dump(results, f, indent=4)
+
   if args.table:
     print('========= Table =========')
 
