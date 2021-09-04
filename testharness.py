@@ -22,7 +22,7 @@ class Fields(str, Enum):
 
 class Modes(str, Enum):
   NOOPT = 'no opts'
-  DET = 'det'
+  DET = 'det + be'
   FH = 'fh + det + be'
   FHCT = 'fh + ct + det + be'
   SBK = 'sbk + det + be'
@@ -342,48 +342,54 @@ $rows
       rows = []
       max_col_vals = {}
 
+      make_table = True
       for filename in old_results.keys():
-        cols = []
+        if not f in old_results[filename]:
+          make_table = False
       
-        for m in modes:
-          if m in old_results[filename][f] and old_results[filename][f][m]:
-            cols.append(old_results[filename][f][m])
+      if make_table:
+        for filename in old_results.keys():
+          cols = []
+        
+          for m in modes:
+            if m in old_results[filename][f] and old_results[filename][f][m]:
+              cols.append(old_results[filename][f][m])
 
-        max_col_vals[filename] = min(cols) if cols else None
+          max_col_vals[filename] = min(cols) if cols else None
 
-      for filename in old_results.keys():
-        cols = ['\\textsc{' + filename.split('.')[0].replace('_', '\_') + '}']
+        for filename in old_results.keys():
+          cols = ['\\textsc{' + filename.split('.')[0].replace('_', '\_') + '}']
+        
+          for m in modes:
+            if f == Fields.TIME:
+              if m in old_results[filename][f] and old_results[filename][f][m] and max_col_vals[filename]:
+                if old_results[filename][f][m] == -1:
+                  cols.append('*')
+                else:
+                  if round(old_results[filename][f][m], 2) == round(max_col_vals[filename], 2):
+                    cols.append('\\textbf{%.2f}' % old_results[filename][f][m])
+                  else:
+                    cols.append('%.2f' % old_results[filename][f][m])
+              else:
+                cols.append('-')
+            else:
+              if m in old_results[filename][f] and old_results[filename][f][m] and max_col_vals[filename]:
+                if old_results[filename][f][m] == -1:
+                  cols.append('*')
+                else:
+                  if round(old_results[filename][f][m], 2) == round(max_col_vals[filename], 2):
+                    cols.append('\\textbf{%s}' % "{:,}".format(old_results[filename][f][m]))
+                  else:
+                    cols.append("{:,}".format(old_results[filename][f][m]))
+              else:
+                cols.append('-')
+
+          rows.append(' & '.join(cols) + ' \\\\')
       
-        for m in modes:
-          if f == Fields.TIME:
-            if m in old_results[filename][f] and old_results[filename][f][m] and max_col_vals[filename]:
-              if old_results[filename][f][m] == -1:
-                cols.append('*')
-              else:
-                if round(old_results[filename][f][m], 2) == round(max_col_vals[filename], 2):
-                  cols.append('\\textbf{%.2f}' % old_results[filename][f][m])
-                else:
-                  cols.append('%.2f' % old_results[filename][f][m])
-            else:
-              cols.append('-')
-          else:
-            if m in old_results[filename][f] and old_results[filename][f][m] and max_col_vals[filename]:
-              if old_results[filename][f][m] == -1:
-                cols.append('*')
-              else:
-                if round(old_results[filename][f][m], 2) == round(max_col_vals[filename], 2):
-                  cols.append('\\textbf{%s}' % "{:,}".format(old_results[filename][f][m]))
-                else:
-                  cols.append("{:,}".format(old_results[filename][f][m]))
-            else:
-              cols.append('-')
+        rows = '\n'.join(rows)
 
-        rows.append(' & '.join(cols) + ' \\\\')
-    
-      rows = '\n'.join(rows)
-
-      caption = '%s Results' % str(f).capitalize()
-      print(table.substitute(caption=caption, alignments=alignments, columns=columns, rows=rows))
+        caption = '%s Results' % str(f).capitalize()
+        print(table.substitute(caption=caption, alignments=alignments, columns=columns, rows=rows))
     
 
   if args.plot:
