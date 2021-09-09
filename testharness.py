@@ -303,7 +303,7 @@ def main():
       
     with open('problog_results.json', 'w') as f:
       json.dump(results, f, indent=4)
-      
+
   elif args.dir:
     files = args.dir[0]
     if not os.path.isdir(files):
@@ -398,7 +398,7 @@ $rows
           make_table = False
       
       if make_table:
-        for filename in old_results.keys():
+        for filename in sorted(old_results.keys()):
           cols = []
         
           for m in modes:
@@ -407,7 +407,7 @@ $rows
 
           max_col_vals[filename] = min(cols) if cols else None
 
-        for filename in old_results.keys():
+        for filename in sorted(old_results.keys()):
           cols = ['\\textsc{' + filename.split('.')[0].replace('_', '\_') + '}']
         
           for m in modes:
