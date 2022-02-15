@@ -242,6 +242,39 @@ def problog(file, timeout):
     print()
     return None
 
+def cnf(file, dice_path, timeout):
+  print('========================================')
+
+  print('File:', file)
+
+  modes = [Modes.NOOPT, Modes.Det, Modes.FH]
+  results = {Fields.TIME:{m:None for m in modes}}
+
+  print('Measuring time elapsed...')
+  for mode in modes:
+    cmd = get_mode_cmd(mode)
+    if cmd is None:
+      print('UNKNOWN MODE')
+      continue
+
+    print('Mode:', mode)
+
+    try:
+      t1 = time.time()
+      p = subprocess.Popen([dice_path, file, '-skip-table'] + cmd, 
+        stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+      out, err = p.communicate(timeout=timeout)
+      t2 = time.time()
+      results[Fields.TIME][mode] = round(t2 - t1, 4)
+
+    except subprocess.TimeoutExpired:
+      print('TIMEOUT')
+      p.terminate()
+
+  print()
+  
+  return results
+
 def main():
   parser = argparse.ArgumentParser(description="Test harness for Dice experiments.")
   parser.add_argument('-i', '--dir', type=str, nargs=1, help='directory of experiment Dice files')
@@ -260,6 +293,7 @@ def main():
   parser.add_argument('-dp', '--distinct', dest='fields', action='append_const', const=Fields.DISTINCT, help='record number of distinct parameters')
 
   parser.add_argument('--problog', action='store_true', help='runs Problog programs')
+  parser.add_argument('--cnf', action='store_true', help="runs Dice with sharpSAT")
 
   parser.add_argument('--modes', nargs='*', type=Modes.from_string, choices=list(Modes), help='select modes to run over')
 
@@ -302,6 +336,34 @@ def main():
       print()
       
     with open('problog_results.json', 'w') as f:
+      json.dump(results, f, indent=4)
+
+  elif args.cnf:
+    files = args.dir[0]
+    results = {}
+    if not os.path.isdir(files):
+      print('Invalid directory specified:', files)
+      exit(2)
+    else:
+      print('Experiment dir:', files)
+      print('Output file:', out)
+
+      if args.timeout:
+        print('Timeout:', args.timeout[0])
+        timeout = args.timeout[0]
+      else:
+        timeout = None
+
+      print()
+
+      for filename in os.listdir(files):
+        file = os.path.join(files, filename)
+        if os.path.isfile(file) and os.path.splitext(file)[-1].lower() == '.dice':
+          results[filename] = cnf(file, timeout)
+
+      print()
+      
+    with open('cnf_results.json', 'w') as f:
       json.dump(results, f, indent=4)
 
   elif args.dir:

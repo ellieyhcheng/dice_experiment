@@ -1,0 +1,1867 @@
+{
+    "timeouts": {
+        "no opts": 1200,
+        "det + be": 1200,
+        "fh + det + be": 1200,
+        "fh + ct + det + be": 1200,
+        "sbk + det + be": 1200,
+        "sbk + fh + det + be": 1200,
+        "sbk + fh + ct + det + be": 1200,
+        "ea + det + be": null,
+        "ea + fh + det + be": null,
+        "ea + fh + ct + det + be": null,
+        "ea + sbk + det + be": null,
+        "eg + sbk + fh + det + be": null,
+        "eg + sbk + fh + ct + det + be": null
+    },
+    "results": {
+        "alarm.dice": {
+            "flips": {
+                "no opts": 585,
+                "det + be": 493,
+                "fh + det + be": 201,
+                "fh + ct + det + be": 201,
+                "sbk + det + be": 504,
+                "sbk + fh + det + be": 133,
+                "sbk + fh + ct + det + be": 133
+            },
+            "params": {
+                "no opts": 752,
+                "det + be": 752,
+                "fh + det + be": 752,
+                "fh + ct + det + be": 752,
+                "sbk + det + be": 752,
+                "sbk + fh + det + be": 752,
+                "sbk + fh + ct + det + be": 752
+            },
+            "distinct": {
+                "no opts": 182,
+                "det + be": 182,
+                "fh + det + be": 182,
+                "fh + ct + det + be": 182,
+                "sbk + det + be": 182,
+                "sbk + fh + det + be": 182,
+                "sbk + fh + ct + det + be": 182
+            },
+            "time": {
+                "no opts": 1.1627,
+                "det + be": 0.8559,
+                "fh + det + be": 0.4457,
+                "fh + ct + det + be": 0.4507,
+                "sbk + det + be": 1.3296,
+                "sbk + fh + det + be": 0.7632,
+                "sbk + fh + ct + det + be": 0.8025
+            },
+            "size": {
+                "no opts": 298867,
+                "det + be": 254766,
+                "fh + det + be": 87168,
+                "fh + ct + det + be": 87168,
+                "sbk + det + be": 545950,
+                "sbk + fh + det + be": 139506,
+                "sbk + fh + ct + det + be": 139506
+            }
+        },
+        "andes.dice": {
+            "flips": {
+                "no opts": 1157,
+                "det + be": 512,
+                "fh + det + be": 328,
+                "fh + ct + det + be": 328,
+                "sbk + det + be": 512,
+                "sbk + fh + det + be": 328,
+                "sbk + fh + ct + det + be": 328
+            },
+            "params": {
+                "no opts": 1157,
+                "det + be": 1157,
+                "fh + det + be": 1157,
+                "fh + ct + det + be": 1157,
+                "sbk + det + be": 1157,
+                "sbk + fh + det + be": 1157,
+                "sbk + fh + ct + det + be": 1157
+            },
+            "distinct": {
+                "no opts": 357,
+                "det + be": 357,
+                "fh + det + be": 357,
+                "fh + ct + det + be": 357,
+                "sbk + det + be": 357,
+                "sbk + fh + det + be": 357,
+                "sbk + fh + ct + det + be": 357
+            },
+            "time": {
+                "no opts": 364.7207,
+                "det + be": 58.5519,
+                "fh + det + be": 26.5875,
+                "fh + ct + det + be": 26.6609,
+                "sbk + det + be": 58.3608,
+                "sbk + fh + det + be": 26.3914,
+                "sbk + fh + ct + det + be": 26.4979
+            },
+            "size": {
+                "no opts": 87119041,
+                "det + be": 8520656,
+                "fh + det + be": 3301994,
+                "fh + ct + det + be": 3301994,
+                "sbk + det + be": 8520656,
+                "sbk + fh + det + be": 3301994,
+                "sbk + fh + ct + det + be": 3301994
+            }
+        },
+        "asia.dice": {
+            "flips": {
+                "no opts": 18,
+                "det + be": 14,
+                "fh + det + be": 14,
+                "fh + ct + det + be": 14,
+                "sbk + det + be": 14,
+                "sbk + fh + det + be": 14,
+                "sbk + fh + ct + det + be": 14
+            },
+            "params": {
+                "no opts": 18,
+                "det + be": 18,
+                "fh + det + be": 18,
+                "fh + ct + det + be": 18,
+                "sbk + det + be": 18,
+                "sbk + fh + det + be": 18,
+                "sbk + fh + ct + det + be": 18
+            },
+            "distinct": {
+                "no opts": 16,
+                "det + be": 16,
+                "fh + det + be": 16,
+                "fh + ct + det + be": 16,
+                "sbk + det + be": 16,
+                "sbk + fh + det + be": 16,
+                "sbk + fh + ct + det + be": 16
+            },
+            "time": {
+                "no opts": 0.0344,
+                "det + be": 0.0337,
+                "fh + det + be": 0.0333,
+                "fh + ct + det + be": 0.0551,
+                "sbk + det + be": 0.0543,
+                "sbk + fh + det + be": 0.0591,
+                "sbk + fh + ct + det + be": 0.0509
+            },
+            "size": {
+                "no opts": 70,
+                "det + be": 41,
+                "fh + det + be": 41,
+                "fh + ct + det + be": 41,
+                "sbk + det + be": 41,
+                "sbk + fh + det + be": 41,
+                "sbk + fh + ct + det + be": 41
+            }
+        },
+        "barley.dice": {
+            "flips": {
+                "no opts": 135059,
+                "det + be": 100062,
+                "fh + det + be": 59254,
+                "fh + ct + det + be": null,
+                "sbk + det + be": 114005,
+                "sbk + fh + det + be": 41998,
+                "sbk + fh + ct + det + be": null
+            },
+            "params": {
+                "no opts": 130179,
+                "det + be": 130179,
+                "fh + det + be": 130179,
+                "fh + ct + det + be": null,
+                "sbk + det + be": -1,
+                "sbk + fh + det + be": null,
+                "sbk + fh + ct + det + be": null
+            },
+            "distinct": {
+                "no opts": 35712,
+                "det + be": 35712,
+                "fh + det + be": 35712,
+                "fh + ct + det + be": null,
+                "sbk + det + be": -1,
+                "sbk + fh + det + be": null,
+                "sbk + fh + ct + det + be": null
+            },
+            "time": {
+                "no opts": null,
+                "det + be": null,
+                "fh + det + be": null,
+                "fh + ct + det + be": null,
+                "sbk + det + be": 49.7175,
+                "sbk + fh + det + be": null,
+                "sbk + fh + ct + det + be": null
+            },
+            "size": {
+                "no opts": null,
+                "det + be": null,
+                "fh + det + be": null,
+                "fh + ct + det + be": null,
+                "sbk + det + be": -1,
+                "sbk + fh + det + be": null,
+                "sbk + fh + ct + det + be": null
+            },
+            "calls": {
+                "sbk + det + be": -1
+            }
+        },
+        "cancer.dice": {
+            "flips": {
+                "no opts": 14,
+                "det + be": 13,
+                "fh + det + be": 11,
+                "fh + ct + det + be": 11,
+                "sbk + det + be": 13,
+                "sbk + fh + det + be": 11,
+                "sbk + fh + ct + det + be": 11
+            },
+            "params": {
+                "no opts": 25,
+                "det + be": 25,
+                "fh + det + be": 25,
+                "fh + ct + det + be": 25,
+                "sbk + det + be": 25,
+                "sbk + fh + det + be": 25,
+                "sbk + fh + ct + det + be": 25
+            },
+            "distinct": {
+                "no opts": 21,
+                "det + be": 21,
+                "fh + det + be": 21,
+                "fh + ct + det + be": 21,
+                "sbk + det + be": 21,
+                "sbk + fh + det + be": 21,
+                "sbk + fh + ct + det + be": 21
+            },
+            "time": {
+                "no opts": 0.0582,
+                "det + be": 0.0615,
+                "fh + det + be": 0.0521,
+                "fh + ct + det + be": 0.0462,
+                "sbk + det + be": 0.0452,
+                "sbk + fh + det + be": 0.0561,
+                "sbk + fh + ct + det + be": 0.0663
+            },
+            "size": {
+                "no opts": 44,
+                "det + be": 43,
+                "fh + det + be": 31,
+                "fh + ct + det + be": 31,
+                "sbk + det + be": 43,
+                "sbk + fh + det + be": 31,
+                "sbk + fh + ct + det + be": 31
+            }
+        },
+        "child.dice": {
+            "flips": {
+                "no opts": 330,
+                "det + be": 218,
+                "fh + det + be": 171,
+                "fh + ct + det + be": 171,
+                "sbk + det + be": 220,
+                "sbk + fh + det + be": 140,
+                "sbk + fh + ct + det + be": 140
+            },
+            "params": {
+                "no opts": 306,
+                "det + be": 306,
+                "fh + det + be": 306,
+                "fh + ct + det + be": 306,
+                "sbk + det + be": 306,
+                "sbk + fh + det + be": 306,
+                "sbk + fh + ct + det + be": 306
+            },
+            "distinct": {
+                "no opts": 152,
+                "det + be": 152,
+                "fh + det + be": 152,
+                "fh + ct + det + be": 152,
+                "sbk + det + be": 152,
+                "sbk + fh + det + be": 152,
+                "sbk + fh + ct + det + be": 152
+            },
+            "time": {
+                "no opts": 0.2265,
+                "det + be": 0.166,
+                "fh + det + be": 0.1703,
+                "fh + ct + det + be": 0.1717,
+                "sbk + det + be": 0.1623,
+                "sbk + fh + det + be": 0.1539,
+                "sbk + fh + ct + det + be": 0.1556
+            },
+            "size": {
+                "no opts": 2542,
+                "det + be": 2112,
+                "fh + det + be": 1680,
+                "fh + ct + det + be": 1680,
+                "sbk + det + be": 3806,
+                "sbk + fh + det + be": 2660,
+                "sbk + fh + ct + det + be": 2660
+            }
+        },
+        "diabetes.dice": {
+            "flips": {
+                "no opts": 619292,
+                "det + be": 77185,
+                "fh + det + be": 15194,
+                "fh + ct + det + be": 15193,
+                "sbk + det + be": 84529,
+                "sbk + fh + det + be": 12305,
+                "sbk + fh + ct + det + be": 12304
+            },
+            "params": {
+                "no opts": -1,
+                "det + be": 461069,
+                "fh + det + be": 461069,
+                "fh + ct + det + be": null,
+                "sbk + det + be": -1,
+                "sbk + fh + det + be": -1,
+                "sbk + fh + ct + det + be": null
+            },
+            "distinct": {
+                "no opts": -1,
+                "det + be": 16612,
+                "fh + det + be": 16612,
+                "fh + ct + det + be": null,
+                "sbk + det + be": -1,
+                "sbk + fh + det + be": -1,
+                "sbk + fh + ct + det + be": null
+            },
+            "time": {
+                "no opts": 23.2075,
+                "det + be": null,
+                "fh + det + be": null,
+                "fh + ct + det + be": null,
+                "sbk + det + be": 22.5788,
+                "sbk + fh + det + be": 38.8455,
+                "sbk + fh + ct + det + be": null
+            },
+            "size": {
+                "no opts": -1,
+                "det + be": null,
+                "fh + det + be": null,
+                "fh + ct + det + be": null,
+                "sbk + det + be": -1,
+                "sbk + fh + det + be": -1,
+                "sbk + fh + ct + det + be": null
+            },
+            "calls": {
+                "no opts": -1,
+                "sbk + det + be": -1,
+                "sbk + fh + det + be": -1
+            }
+        },
+        "earthquake.dice": {
+            "flips": {
+                "no opts": 10,
+                "det + be": 10,
+                "fh + det + be": 10,
+                "fh + ct + det + be": 10,
+                "sbk + det + be": 10,
+                "sbk + fh + det + be": 10,
+                "sbk + fh + ct + det + be": 10
+            },
+            "params": {
+                "no opts": 10,
+                "det + be": 10,
+                "fh + det + be": 10,
+                "fh + ct + det + be": 10,
+                "sbk + det + be": 10,
+                "sbk + fh + det + be": 10,
+                "sbk + fh + ct + det + be": 10
+            },
+            "distinct": {
+                "no opts": 10,
+                "det + be": 10,
+                "fh + det + be": 10,
+                "fh + ct + det + be": 10,
+                "sbk + det + be": 10,
+                "sbk + fh + det + be": 10,
+                "sbk + fh + ct + det + be": 10
+            },
+            "time": {
+                "no opts": 0.052,
+                "det + be": 0.0514,
+                "fh + det + be": 0.0456,
+                "fh + ct + det + be": 0.0416,
+                "sbk + det + be": 0.0349,
+                "sbk + fh + det + be": 0.0335,
+                "sbk + fh + ct + det + be": 0.0327
+            },
+            "size": {
+                "no opts": 29,
+                "det + be": 29,
+                "fh + det + be": 29,
+                "fh + ct + det + be": 29,
+                "sbk + det + be": 29,
+                "sbk + fh + det + be": 29,
+                "sbk + fh + ct + det + be": 29
+            }
+        },
+        "hailfinder.dice": {
+            "flips": {
+                "no opts": 3683,
+                "det + be": 2143,
+                "fh + det + be": 1149,
+                "fh + ct + det + be": 1149,
+                "sbk + det + be": 2203,
+                "sbk + fh + det + be": 885,
+                "sbk + fh + ct + det + be": 885
+            },
+            "params": {
+                "no opts": 3741,
+                "det + be": 3741,
+                "fh + det + be": 3741,
+                "fh + ct + det + be": 3741,
+                "sbk + det + be": 3741,
+                "sbk + fh + det + be": 3741,
+                "sbk + fh + ct + det + be": 3741
+            },
+            "distinct": {
+                "no opts": 835,
+                "det + be": 835,
+                "fh + det + be": 835,
+                "fh + ct + det + be": 835,
+                "sbk + det + be": 835,
+                "sbk + fh + det + be": 835,
+                "sbk + fh + ct + det + be": 835
+            },
+            "time": {
+                "no opts": 11.0758,
+                "det + be": 3.9948,
+                "fh + det + be": 4.0804,
+                "fh + ct + det + be": 4.3605,
+                "sbk + det + be": 4.7636,
+                "sbk + fh + det + be": 4.5338,
+                "sbk + fh + ct + det + be": 4.808
+            },
+            "size": {
+                "no opts": 2635901,
+                "det + be": 145917,
+                "fh + det + be": 140963,
+                "fh + ct + det + be": 140963,
+                "sbk + det + be": 222769,
+                "sbk + fh + det + be": 174793,
+                "sbk + fh + ct + det + be": 174793
+            }
+        },
+        "hepar2.dice": {
+            "flips": {
+                "no opts": 1582,
+                "det + be": 1452,
+                "fh + det + be": 1283,
+                "fh + ct + det + be": 1283,
+                "sbk + det + be": 1453,
+                "sbk + fh + det + be": 1272,
+                "sbk + fh + ct + det + be": 1272
+            },
+            "params": {
+                "no opts": 2139,
+                "det + be": 2139,
+                "fh + det + be": 2139,
+                "fh + ct + det + be": 2139,
+                "sbk + det + be": 2139,
+                "sbk + fh + det + be": 2139,
+                "sbk + fh + ct + det + be": 2139
+            },
+            "distinct": {
+                "no opts": 1914,
+                "det + be": 1914,
+                "fh + det + be": 1914,
+                "fh + ct + det + be": 1914,
+                "sbk + det + be": 1914,
+                "sbk + fh + det + be": 1914,
+                "sbk + fh + ct + det + be": 1914
+            },
+            "time": {
+                "no opts": 0.8751,
+                "det + be": 0.8457,
+                "fh + det + be": 1.2827,
+                "fh + ct + det + be": 1.4062,
+                "sbk + det + be": 1.0296,
+                "sbk + fh + det + be": 1.5448,
+                "sbk + fh + ct + det + be": 1.7863
+            },
+            "size": {
+                "no opts": 36375,
+                "det + be": 36244,
+                "fh + det + be": 36037,
+                "fh + ct + det + be": 36037,
+                "sbk + det + be": 39566,
+                "sbk + fh + det + be": 39218,
+                "sbk + fh + ct + det + be": 39218
+            }
+        },
+        "insurance.dice": {
+            "flips": {
+                "no opts": 1217,
+                "det + be": 564,
+                "fh + det + be": 320,
+                "fh + ct + det + be": 320,
+                "sbk + det + be": 736,
+                "sbk + fh + det + be": 320,
+                "sbk + fh + ct + det + be": 320
+            },
+            "params": {
+                "no opts": 1419,
+                "det + be": 1419,
+                "fh + det + be": 1419,
+                "fh + ct + det + be": 1419,
+                "sbk + det + be": 1419,
+                "sbk + fh + det + be": 1419,
+                "sbk + fh + ct + det + be": 1419
+            },
+            "distinct": {
+                "no opts": 427,
+                "det + be": 427,
+                "fh + det + be": 427,
+                "fh + ct + det + be": 427,
+                "sbk + det + be": 427,
+                "sbk + fh + det + be": 427,
+                "sbk + fh + ct + det + be": 427
+            },
+            "time": {
+                "no opts": 1.4117,
+                "det + be": 0.7545,
+                "fh + det + be": 0.6027,
+                "fh + ct + det + be": 0.6066,
+                "sbk + det + be": 1.0936,
+                "sbk + fh + det + be": 0.7698,
+                "sbk + fh + ct + det + be": 0.785
+            },
+            "size": {
+                "no opts": 190242,
+                "det + be": 90095,
+                "fh + det + be": 71396,
+                "fh + ct + det + be": 71396,
+                "sbk + det + be": 184476,
+                "sbk + fh + det + be": 97231,
+                "sbk + fh + ct + det + be": 97231
+            }
+        },
+        "link.dice": {
+            "flips": {
+                "no opts": 14503,
+                "det + be": 458,
+                "fh + det + be": 458,
+                "fh + ct + det + be": 458,
+                "sbk + det + be": 458,
+                "sbk + fh + det + be": 458,
+                "sbk + fh + ct + det + be": 458
+            },
+            "params": {
+                "no opts": 18317,
+                "det + be": 18317,
+                "fh + det + be": 18317,
+                "fh + ct + det + be": 18317,
+                "sbk + det + be": 18317,
+                "sbk + fh + det + be": 18317,
+                "sbk + fh + ct + det + be": 18317
+            },
+            "distinct": {
+                "no opts": 1264,
+                "det + be": 1264,
+                "fh + det + be": 1264,
+                "fh + ct + det + be": 1264,
+                "sbk + det + be": 1264,
+                "sbk + fh + det + be": 1264,
+                "sbk + fh + ct + det + be": 1264
+            },
+            "time": {
+                "no opts": null,
+                "det + be": null,
+                "fh + det + be": null,
+                "fh + ct + det + be": null,
+                "sbk + det + be": null,
+                "sbk + fh + det + be": null,
+                "sbk + fh + ct + det + be": null
+            },
+            "size": {
+                "no opts": null,
+                "det + be": null,
+                "fh + det + be": null,
+                "fh + ct + det + be": null,
+                "sbk + det + be": null,
+                "sbk + fh + det + be": null,
+                "sbk + fh + ct + det + be": null
+            }
+        },
+        "mildew.dice": {
+            "flips": {
+                "no opts": 690940,
+                "det + be": 30899,
+                "fh + det + be": 26318,
+                "fh + ct + det + be": null,
+                "sbk + det + be": 34328,
+                "sbk + fh + det + be": 21694,
+                "sbk + fh + ct + det + be": null
+            },
+            "params": {
+                "no opts": -1,
+                "det + be": 547158,
+                "fh + det + be": 547158,
+                "fh + ct + det + be": 547158,
+                "sbk + det + be": 547158,
+                "sbk + fh + det + be": 547158,
+                "sbk + fh + ct + det + be": 547158
+            },
+            "distinct": {
+                "no opts": -1,
+                "det + be": 6631,
+                "fh + det + be": 6631,
+                "fh + ct + det + be": 6631,
+                "sbk + det + be": 6631,
+                "sbk + fh + det + be": 6631,
+                "sbk + fh + ct + det + be": 6631
+            },
+            "time": {
+                "no opts": 27.0455,
+                "det + be": null,
+                "fh + det + be": null,
+                "fh + ct + det + be": null,
+                "sbk + det + be": null,
+                "sbk + fh + det + be": null,
+                "sbk + fh + ct + det + be": null
+            },
+            "size": {
+                "no opts": -1,
+                "det + be": null,
+                "fh + det + be": null,
+                "fh + ct + det + be": null,
+                "sbk + det + be": null,
+                "sbk + fh + det + be": null,
+                "sbk + fh + ct + det + be": null
+            },
+            "calls": {
+                "no opts": -1
+            }
+        },
+        "munin.dice": {
+            "flips": {
+                "no opts": 119529,
+                "det + be": 25208,
+                "fh + det + be": 19148,
+                "fh + ct + det + be": 19148,
+                "sbk + det + be": 28453,
+                "sbk + fh + det + be": 17193,
+                "sbk + fh + ct + det + be": 17193
+            },
+            "params": {
+                "no opts": 98423,
+                "det + be": 98423,
+                "fh + det + be": 98423,
+                "fh + ct + det + be": 98423,
+                "sbk + det + be": 98423,
+                "sbk + fh + det + be": 98423,
+                "sbk + fh + ct + det + be": 98423
+            },
+            "distinct": {
+                "no opts": 23114,
+                "det + be": 23114,
+                "fh + det + be": 23114,
+                "fh + ct + det + be": 23114,
+                "sbk + det + be": 23114,
+                "sbk + fh + det + be": 23114,
+                "sbk + fh + ct + det + be": 23114
+            },
+            "time": {
+                "no opts": null,
+                "det + be": null,
+                "fh + det + be": null,
+                "fh + ct + det + be": null,
+                "sbk + det + be": null,
+                "sbk + fh + det + be": null,
+                "sbk + fh + ct + det + be": null
+            },
+            "size": {
+                "no opts": null,
+                "det + be": null,
+                "fh + det + be": null,
+                "fh + ct + det + be": null,
+                "sbk + det + be": null,
+                "sbk + fh + det + be": null,
+                "sbk + fh + ct + det + be": null
+            }
+        },
+        "munin1.dice": {
+            "flips": {
+                "no opts": 22956,
+                "det + be": 4665,
+                "fh + det + be": 3428,
+                "fh + ct + det + be": 3428,
+                "sbk + det + be": 5194,
+                "sbk + fh + det + be": 3026,
+                "sbk + fh + ct + det + be": 3026
+            },
+            "params": {
+                "no opts": 18856,
+                "det + be": 18856,
+                "fh + det + be": 18856,
+                "fh + ct + det + be": 18856,
+                "sbk + det + be": 18856,
+                "sbk + fh + det + be": 18856,
+                "sbk + fh + ct + det + be": 18856
+            },
+            "distinct": {
+                "no opts": 3989,
+                "det + be": 3989,
+                "fh + det + be": 3989,
+                "fh + ct + det + be": 3989,
+                "sbk + det + be": 3989,
+                "sbk + fh + det + be": 3989,
+                "sbk + fh + ct + det + be": 3989
+            },
+            "time": {
+                "no opts": null,
+                "det + be": null,
+                "fh + det + be": 678.2757,
+                "fh + ct + det + be": 682.1299,
+                "sbk + det + be": null,
+                "sbk + fh + det + be": 894.4314,
+                "sbk + fh + ct + det + be": 891.9948
+            },
+            "size": {
+                "no opts": null,
+                "det + be": null,
+                "fh + det + be": 2162624,
+                "fh + ct + det + be": 2162624,
+                "sbk + det + be": null,
+                "sbk + fh + det + be": 2735348,
+                "sbk + fh + ct + det + be": 2735348
+            }
+        },
+        "munin2.dice": {
+            "flips": {
+                "no opts": 103439,
+                "det + be": 22643,
+                "fh + det + be": 17963,
+                "fh + ct + det + be": 17961,
+                "sbk + det + be": 25347,
+                "sbk + fh + det + be": 16089,
+                "sbk + fh + ct + det + be": 16087
+            },
+            "params": {
+                "no opts": 82670,
+                "det + be": 82670,
+                "fh + det + be": 82670,
+                "fh + ct + det + be": 82670,
+                "sbk + det + be": 82670,
+                "sbk + fh + det + be": 82670,
+                "sbk + fh + ct + det + be": 82670
+            },
+            "distinct": {
+                "no opts": 21396,
+                "det + be": 21396,
+                "fh + det + be": 21396,
+                "fh + ct + det + be": 21396,
+                "sbk + det + be": 21396,
+                "sbk + fh + det + be": 21396,
+                "sbk + fh + ct + det + be": 21396
+            },
+            "time": {
+                "no opts": null,
+                "det + be": null,
+                "fh + det + be": null,
+                "fh + ct + det + be": null,
+                "sbk + det + be": null,
+                "sbk + fh + det + be": null,
+                "sbk + fh + ct + det + be": null
+            },
+            "size": {
+                "no opts": null,
+                "det + be": null,
+                "fh + det + be": null,
+                "fh + ct + det + be": null,
+                "sbk + det + be": null,
+                "sbk + fh + det + be": null,
+                "sbk + fh + ct + det + be": null
+            }
+        },
+        "munin3.dice": {
+            "flips": {
+                "no opts": 106660,
+                "det + be": 23352,
+                "fh + det + be": 18856,
+                "fh + ct + det + be": 18856,
+                "sbk + det + be": 26168,
+                "sbk + fh + det + be": 16889,
+                "sbk + fh + ct + det + be": 16889
+            },
+            "params": {
+                "no opts": 84485,
+                "det + be": 84485,
+                "fh + det + be": 84485,
+                "fh + ct + det + be": 84485,
+                "sbk + det + be": 84485,
+                "sbk + fh + det + be": 84485,
+                "sbk + fh + ct + det + be": 84485
+            },
+            "distinct": {
+                "no opts": 22575,
+                "det + be": 22575,
+                "fh + det + be": 22575,
+                "fh + ct + det + be": 22575,
+                "sbk + det + be": 22575,
+                "sbk + fh + det + be": 22575,
+                "sbk + fh + ct + det + be": 22575
+            },
+            "time": {
+                "no opts": null,
+                "det + be": null,
+                "fh + det + be": null,
+                "fh + ct + det + be": null,
+                "sbk + det + be": null,
+                "sbk + fh + det + be": null,
+                "sbk + fh + ct + det + be": null
+            },
+            "size": {
+                "no opts": null,
+                "det + be": null,
+                "fh + det + be": null,
+                "fh + ct + det + be": null,
+                "sbk + det + be": null,
+                "sbk + fh + det + be": null,
+                "sbk + fh + ct + det + be": null
+            }
+        },
+        "munin4.dice": {
+            "flips": {
+                "no opts": 119289,
+                "det + be": 25205,
+                "fh + det + be": 19145,
+                "fh + ct + det + be": 19143,
+                "sbk + det + be": 28185,
+                "sbk + fh + det + be": 17090,
+                "sbk + fh + ct + det + be": 17088
+            },
+            "params": {
+                "no opts": 96327,
+                "det + be": 96327,
+                "fh + det + be": 96327,
+                "fh + ct + det + be": 96327,
+                "sbk + det + be": 96327,
+                "sbk + fh + det + be": 96327,
+                "sbk + fh + ct + det + be": 96327
+            },
+            "distinct": {
+                "no opts": 22731,
+                "det + be": 22731,
+                "fh + det + be": 22731,
+                "fh + ct + det + be": 22731,
+                "sbk + det + be": 22731,
+                "sbk + fh + det + be": 22731,
+                "sbk + fh + ct + det + be": 22731
+            },
+            "time": {
+                "no opts": null,
+                "det + be": null,
+                "fh + det + be": null,
+                "fh + ct + det + be": null,
+                "sbk + det + be": null,
+                "sbk + fh + det + be": null,
+                "sbk + fh + ct + det + be": null
+            },
+            "size": {
+                "no opts": null,
+                "det + be": null,
+                "fh + det + be": null,
+                "fh + ct + det + be": null,
+                "sbk + det + be": null,
+                "sbk + fh + det + be": null,
+                "sbk + fh + ct + det + be": null
+            }
+        },
+        "pathfinder.dice": {
+            "flips": {
+                "no opts": 91358,
+                "det + be": 20749,
+                "fh + det + be": 1897,
+                "fh + ct + det + be": 1897,
+                "sbk + det + be": 30000,
+                "sbk + fh + det + be": 1718,
+                "sbk + fh + ct + det + be": 1718
+            },
+            "params": {
+                "no opts": 91486,
+                "det + be": 91486,
+                "fh + det + be": 91486,
+                "fh + ct + det + be": 91486,
+                "sbk + det + be": 91486,
+                "sbk + fh + det + be": 91486,
+                "sbk + fh + ct + det + be": 91486
+            },
+            "distinct": {
+                "no opts": 2138,
+                "det + be": 2138,
+                "fh + det + be": 2138,
+                "fh + ct + det + be": 2138,
+                "sbk + det + be": 2138,
+                "sbk + fh + det + be": 2138,
+                "sbk + fh + ct + det + be": 2138
+            },
+            "time": {
+                "no opts": 66.9535,
+                "det + be": 21.5538,
+                "fh + det + be": 13.108,
+                "fh + ct + det + be": 24.5101,
+                "sbk + det + be": 34.0495,
+                "sbk + fh + det + be": 24.454,
+                "sbk + fh + ct + det + be": 44.0009
+            },
+            "size": {
+                "no opts": 571839,
+                "det + be": 61157,
+                "fh + det + be": 16153,
+                "fh + ct + det + be": 16153,
+                "sbk + det + be": 88170,
+                "sbk + fh + det + be": 18777,
+                "sbk + fh + ct + det + be": 18777
+            }
+        },
+        "pigs.dice": {
+            "flips": {
+                "no opts": 8427,
+                "det + be": 2066,
+                "fh + det + be": 1178,
+                "fh + ct + det + be": 1178,
+                "sbk + det + be": 2066,
+                "sbk + fh + det + be": 586,
+                "sbk + fh + ct + det + be": 586
+            },
+            "params": {
+                "no opts": 8427,
+                "det + be": 8427,
+                "fh + det + be": 8427,
+                "fh + ct + det + be": 8427,
+                "sbk + det + be": 8427,
+                "sbk + fh + det + be": 8427,
+                "sbk + fh + ct + det + be": 8427
+            },
+            "distinct": {
+                "no opts": 1474,
+                "det + be": 1474,
+                "fh + det + be": 1474,
+                "fh + ct + det + be": 1474,
+                "sbk + det + be": 1474,
+                "sbk + fh + det + be": 1474,
+                "sbk + fh + ct + det + be": 1474
+            },
+            "time": {
+                "no opts": 185.3818,
+                "det + be": 71.9877,
+                "fh + det + be": 49.8546,
+                "fh + ct + det + be": 53.238,
+                "sbk + det + be": 70.2387,
+                "sbk + fh + det + be": 32.9777,
+                "sbk + fh + ct + det + be": 38.5321
+            },
+            "size": {
+                "no opts": 409226,
+                "det + be": 180124,
+                "fh + det + be": 140617,
+                "fh + ct + det + be": 140617,
+                "sbk + det + be": 195842,
+                "sbk + fh + det + be": 89537,
+                "sbk + fh + ct + det + be": 89537
+            }
+        },
+        "sachs.dice": {
+            "flips": {
+                "no opts": 267,
+                "det + be": 166,
+                "fh + det + be": 159,
+                "fh + ct + det + be": 159,
+                "sbk + det + be": 178,
+                "sbk + fh + det + be": 171,
+                "sbk + fh + ct + det + be": 171
+            },
+            "params": {
+                "no opts": 267,
+                "det + be": 267,
+                "fh + det + be": 267,
+                "fh + ct + det + be": 267,
+                "sbk + det + be": 267,
+                "sbk + fh + det + be": 267,
+                "sbk + fh + ct + det + be": 267
+            },
+            "distinct": {
+                "no opts": 249,
+                "det + be": 249,
+                "fh + det + be": 249,
+                "fh + ct + det + be": 249,
+                "sbk + det + be": 249,
+                "sbk + fh + det + be": 249,
+                "sbk + fh + ct + det + be": 249
+            },
+            "time": {
+                "no opts": 0.1567,
+                "det + be": 0.1147,
+                "fh + det + be": 0.1283,
+                "fh + ct + det + be": 0.1296,
+                "sbk + det + be": 0.1331,
+                "sbk + fh + det + be": 0.1199,
+                "sbk + fh + ct + det + be": 0.1248
+            },
+            "size": {
+                "no opts": 838,
+                "det + be": 691,
+                "fh + det + be": 680,
+                "fh + ct + det + be": 680,
+                "sbk + det + be": 971,
+                "sbk + fh + det + be": 959,
+                "sbk + fh + ct + det + be": 959
+            }
+        },
+        "survey.dice": {
+            "flips": {
+                "no opts": 26,
+                "det + be": 21,
+                "fh + det + be": 21,
+                "fh + ct + det + be": 21,
+                "sbk + det + be": 21,
+                "sbk + fh + det + be": 21,
+                "sbk + fh + ct + det + be": 21
+            },
+            "params": {
+                "no opts": 37,
+                "det + be": 37,
+                "fh + det + be": 37,
+                "fh + ct + det + be": 37,
+                "sbk + det + be": 37,
+                "sbk + fh + det + be": 37,
+                "sbk + fh + ct + det + be": 37
+            },
+            "distinct": {
+                "no opts": 37,
+                "det + be": 37,
+                "fh + det + be": 37,
+                "fh + ct + det + be": 37,
+                "sbk + det + be": 37,
+                "sbk + fh + det + be": 37,
+                "sbk + fh + ct + det + be": 37
+            },
+            "time": {
+                "no opts": 0.0385,
+                "det + be": 0.0384,
+                "fh + det + be": 0.0381,
+                "fh + ct + det + be": 0.0381,
+                "sbk + det + be": 0.04,
+                "sbk + fh + det + be": 0.0403,
+                "sbk + fh + ct + det + be": 0.0401
+            },
+            "size": {
+                "no opts": 94,
+                "det + be": 89,
+                "fh + det + be": 89,
+                "fh + ct + det + be": 89,
+                "sbk + det + be": 89,
+                "sbk + fh + det + be": 89,
+                "sbk + fh + ct + det + be": 89
+            }
+        },
+        "water.dice": {
+            "flips": {
+                "no opts": 10203,
+                "det + be": 3112,
+                "fh + det + be": 1813,
+                "fh + ct + det + be": 1812,
+                "sbk + det + be": 4558,
+                "sbk + fh + det + be": 1801,
+                "sbk + fh + ct + det + be": 1801
+            },
+            "params": {
+                "no opts": 13484,
+                "det + be": 13484,
+                "fh + det + be": 13484,
+                "fh + ct + det + be": 13484,
+                "sbk + det + be": 13484,
+                "sbk + fh + det + be": 13484,
+                "sbk + fh + ct + det + be": 13484
+            },
+            "distinct": {
+                "no opts": 3578,
+                "det + be": 3578,
+                "fh + det + be": 3578,
+                "fh + ct + det + be": 3578,
+                "sbk + det + be": 3578,
+                "sbk + fh + det + be": 3578,
+                "sbk + fh + ct + det + be": 3578
+            },
+            "time": {
+                "no opts": 310.0354,
+                "det + be": 19.6702,
+                "fh + det + be": 8.458,
+                "fh + ct + det + be": 9.8645,
+                "sbk + det + be": 20.1309,
+                "sbk + fh + det + be": 9.1532,
+                "sbk + fh + ct + det + be": 10.919
+            },
+            "size": {
+                "no opts": 39494260,
+                "det + be": 44703,
+                "fh + det + be": 26714,
+                "fh + ct + det + be": 26714,
+                "sbk + det + be": 46334,
+                "sbk + fh + det + be": 28189,
+                "sbk + fh + ct + det + be": 28189
+            }
+        },
+        "win95pts.dice": {
+            "flips": {
+                "no opts": 574,
+                "det + be": 200,
+                "fh + det + be": 125,
+                "fh + ct + det + be": 124,
+                "sbk + det + be": 200,
+                "sbk + fh + det + be": 125,
+                "sbk + fh + ct + det + be": 124
+            },
+            "params": {
+                "no opts": 574,
+                "det + be": 574,
+                "fh + det + be": 574,
+                "fh + ct + det + be": 574,
+                "sbk + det + be": 574,
+                "sbk + fh + det + be": 574,
+                "sbk + fh + ct + det + be": 574
+            },
+            "distinct": {
+                "no opts": 168,
+                "det + be": 168,
+                "fh + det + be": 168,
+                "fh + ct + det + be": 168,
+                "sbk + det + be": 168,
+                "sbk + fh + det + be": 168,
+                "sbk + fh + ct + det + be": 168
+            },
+            "time": {
+                "no opts": 0.38,
+                "det + be": 0.1059,
+                "fh + det + be": 0.0945,
+                "fh + ct + det + be": 0.0981,
+                "sbk + det + be": 0.1068,
+                "sbk + fh + det + be": 0.0961,
+                "sbk + fh + ct + det + be": 0.0985
+            },
+            "size": {
+                "no opts": 75182,
+                "det + be": 1545,
+                "fh + det + be": 982,
+                "fh + ct + det + be": 975,
+                "sbk + det + be": 1545,
+                "sbk + fh + det + be": 982,
+                "sbk + fh + ct + det + be": 975
+            }
+        },
+        "BN_28.dice": {
+            "flips": {
+                "no opts": 1698120,
+                "det + be": 1018629,
+                "fh + det + be": null,
+                "fh + ct + det + be": null,
+                "sbk + det + be": null,
+                "sbk + fh + det + be": null,
+                "sbk + fh + ct + det + be": null
+            },
+            "params": {
+                "no opts": -1,
+                "det + be": -1,
+                "fh + det + be": null,
+                "fh + ct + det + be": null,
+                "sbk + det + be": null,
+                "sbk + fh + det + be": null,
+                "sbk + fh + ct + det + be": null
+            },
+            "distinct": {
+                "no opts": -1,
+                "det + be": -1,
+                "fh + det + be": null,
+                "fh + ct + det + be": null,
+                "sbk + det + be": null,
+                "sbk + fh + det + be": null,
+                "sbk + fh + ct + det + be": null
+            },
+            "time": {
+                "no opts": 205.0252,
+                "det + be": 207.3824,
+                "fh + det + be": null,
+                "fh + ct + det + be": null,
+                "sbk + det + be": null,
+                "sbk + fh + det + be": null,
+                "sbk + fh + ct + det + be": null
+            },
+            "size": {
+                "no opts": -1,
+                "det + be": -1,
+                "fh + det + be": null,
+                "fh + ct + det + be": null,
+                "sbk + det + be": null,
+                "sbk + fh + det + be": null,
+                "sbk + fh + ct + det + be": null
+            },
+            "calls": {
+                "no opts": -1,
+                "det + be": -1
+            }
+        },
+        "BN_78.dice": {
+            "flips": {
+                "no opts": 829,
+                "det + be": 814,
+                "fh + det + be": 328,
+                "fh + ct + det + be": 316,
+                "sbk + det + be": 814,
+                "sbk + fh + det + be": 328,
+                "sbk + fh + ct + det + be": 316
+            },
+            "params": {
+                "no opts": 829,
+                "det + be": 829,
+                "fh + det + be": 829,
+                "fh + ct + det + be": 829,
+                "sbk + det + be": 829,
+                "sbk + fh + det + be": 829,
+                "sbk + fh + ct + det + be": 829
+            },
+            "distinct": {
+                "no opts": 328,
+                "det + be": 328,
+                "fh + det + be": 328,
+                "fh + ct + det + be": 328,
+                "sbk + det + be": 328,
+                "sbk + fh + det + be": 328,
+                "sbk + fh + ct + det + be": 328
+            },
+            "time": {
+                "no opts": 16.0591,
+                "det + be": 15.5416,
+                "fh + det + be": 14.7078,
+                "fh + ct + det + be": null,
+                "sbk + det + be": 15.6874,
+                "sbk + fh + det + be": 15.3133,
+                "sbk + fh + ct + det + be": null
+            },
+            "size": {
+                "no opts": 3499826,
+                "det + be": 3305000,
+                "fh + det + be": 3235616,
+                "fh + ct + det + be": 3235616,
+                "sbk + det + be": 3305000,
+                "sbk + fh + det + be": 3235616,
+                "sbk + fh + ct + det + be": 3235616
+            }
+        },
+        "BN_79.dice": {
+            "flips": {
+                "no opts": 829,
+                "det + be": 814,
+                "fh + det + be": 328,
+                "fh + ct + det + be": 318,
+                "sbk + det + be": 814,
+                "sbk + fh + det + be": 328,
+                "sbk + fh + ct + det + be": 318
+            },
+            "params": {
+                "no opts": 829,
+                "det + be": 829,
+                "fh + det + be": 829,
+                "fh + ct + det + be": 829,
+                "sbk + det + be": 829,
+                "sbk + fh + det + be": 829,
+                "sbk + fh + ct + det + be": 829
+            },
+            "distinct": {
+                "no opts": 328,
+                "det + be": 328,
+                "fh + det + be": 328,
+                "fh + ct + det + be": 328,
+                "sbk + det + be": 328,
+                "sbk + fh + det + be": 328,
+                "sbk + fh + ct + det + be": 328
+            },
+            "time": {
+                "no opts": 112.5478,
+                "det + be": 113.2091,
+                "fh + det + be": 107.0085,
+                "fh + ct + det + be": null,
+                "sbk + det + be": 112.6587,
+                "sbk + fh + det + be": 106.945,
+                "sbk + fh + ct + det + be": null
+            },
+            "size": {
+                "no opts": 21497148,
+                "det + be": 21200743,
+                "fh + det + be": 20453340,
+                "fh + ct + det + be": 20453364,
+                "sbk + det + be": 21200743,
+                "sbk + fh + det + be": 20453340,
+                "sbk + fh + ct + det + be": 20453364
+            }
+        },
+        "alarm-alt.dice": {
+            "flips": {
+                "no opts": 585,
+                "det + be": 448,
+                "fh + det + be": 201,
+                "fh + ct + det + be": 198,
+                "sbk + det + be": 490,
+                "sbk + fh + det + be": 137,
+                "sbk + fh + ct + det + be": 135
+            },
+            "params": {
+                "no opts": 680,
+                "det + be": 680,
+                "fh + det + be": 680,
+                "fh + ct + det + be": 680,
+                "sbk + det + be": 680,
+                "sbk + fh + det + be": 680,
+                "sbk + fh + ct + det + be": 680
+            },
+            "distinct": {
+                "no opts": 167,
+                "det + be": 167,
+                "fh + det + be": 167,
+                "fh + ct + det + be": 167,
+                "sbk + det + be": 167,
+                "sbk + fh + det + be": 167,
+                "sbk + fh + ct + det + be": 167
+            },
+            "time": {
+                "no opts": 0.6982,
+                "det + be": 0.4064,
+                "fh + det + be": 0.3344,
+                "fh + ct + det + be": null,
+                "sbk + det + be": 0.7204,
+                "sbk + fh + det + be": 0.4171,
+                "sbk + fh + ct + det + be": 0.5719
+            },
+            "size": {
+                "no opts": 73883,
+                "det + be": 51679,
+                "fh + det + be": 18859,
+                "fh + ct + det + be": 18858,
+                "sbk + det + be": 91240,
+                "sbk + fh + det + be": 26001,
+                "sbk + fh + ct + det + be": 26001
+            }
+        },
+        "alarm-safer.dice": {
+            "flips": {
+                "no opts": 585,
+                "det + be": 439,
+                "fh + det + be": 247,
+                "fh + ct + det + be": 247,
+                "sbk + det + be": 487,
+                "sbk + fh + det + be": 222,
+                "sbk + fh + ct + det + be": 222
+            },
+            "params": {
+                "no opts": 680,
+                "det + be": 680,
+                "fh + det + be": 680,
+                "fh + ct + det + be": 680,
+                "sbk + det + be": 680,
+                "sbk + fh + det + be": 680,
+                "sbk + fh + ct + det + be": 680
+            },
+            "distinct": {
+                "no opts": 258,
+                "det + be": 258,
+                "fh + det + be": 258,
+                "fh + ct + det + be": 258,
+                "sbk + det + be": 258,
+                "sbk + fh + det + be": 258,
+                "sbk + fh + ct + det + be": 258
+            },
+            "time": {
+                "no opts": 0.9835,
+                "det + be": 0.8163,
+                "fh + det + be": 0.6682,
+                "fh + ct + det + be": 0.6699,
+                "sbk + det + be": 1.3164,
+                "sbk + fh + det + be": 0.8852,
+                "sbk + fh + ct + det + be": 0.8904
+            },
+            "size": {
+                "no opts": 256271,
+                "det + be": 214376,
+                "fh + det + be": 143068,
+                "fh + ct + det + be": 143068,
+                "sbk + det + be": 464699,
+                "sbk + fh + det + be": 200029,
+                "sbk + fh + ct + det + be": 200029
+            }
+        },
+        "cpcs54.dice": {
+            "flips": {
+                "no opts": 829,
+                "det + be": 814,
+                "fh + det + be": 328,
+                "fh + ct + det + be": 322,
+                "sbk + det + be": 814,
+                "sbk + fh + det + be": 328,
+                "sbk + fh + ct + det + be": 322
+            },
+            "params": {
+                "no opts": 829,
+                "det + be": 829,
+                "fh + det + be": 829,
+                "fh + ct + det + be": 829,
+                "sbk + det + be": 829,
+                "sbk + fh + det + be": 829,
+                "sbk + fh + ct + det + be": 829
+            },
+            "distinct": {
+                "no opts": 328,
+                "det + be": 328,
+                "fh + det + be": 328,
+                "fh + ct + det + be": 328,
+                "sbk + det + be": 328,
+                "sbk + fh + det + be": 328,
+                "sbk + fh + ct + det + be": 328
+            },
+            "time": {
+                "no opts": 18.5243,
+                "det + be": 18.5373,
+                "fh + det + be": 17.0372,
+                "fh + ct + det + be": null,
+                "sbk + det + be": 18.1467,
+                "sbk + fh + det + be": 16.7542,
+                "sbk + fh + ct + det + be": null
+            },
+            "size": {
+                "no opts": 2450688,
+                "det + be": 2438881,
+                "fh + det + be": 2310466,
+                "fh + ct + det + be": 2310466,
+                "sbk + det + be": 2438881,
+                "sbk + fh + det + be": 2310466,
+                "sbk + fh + ct + det + be": 2310466
+            }
+        },
+        "diagnose_a.dice": {
+            "flips": {
+                "no opts": 5005,
+                "det + be": 628,
+                "fh + det + be": 377,
+                "fh + ct + det + be": 377,
+                "sbk + det + be": 2483,
+                "sbk + fh + det + be": 422,
+                "sbk + fh + ct + det + be": 422
+            },
+            "params": {
+                "no opts": 4764,
+                "det + be": 4764,
+                "fh + det + be": 4764,
+                "fh + ct + det + be": 4764,
+                "sbk + det + be": 4764,
+                "sbk + fh + det + be": 4764,
+                "sbk + fh + ct + det + be": 4764
+            },
+            "distinct": {
+                "no opts": 434,
+                "det + be": 434,
+                "fh + det + be": 434,
+                "fh + ct + det + be": 434,
+                "sbk + det + be": 434,
+                "sbk + fh + det + be": 434,
+                "sbk + fh + ct + det + be": 434
+            },
+            "time": {
+                "no opts": 141.799,
+                "det + be": 1.4672,
+                "fh + det + be": 0.636,
+                "fh + ct + det + be": 0.7643,
+                "sbk + det + be": 16.9101,
+                "sbk + fh + det + be": 1.1723,
+                "sbk + fh + ct + det + be": 1.657
+            },
+            "size": {
+                "no opts": 5020830,
+                "det + be": 41257,
+                "fh + det + be": 6241,
+                "fh + ct + det + be": 6241,
+                "sbk + det + be": 776734,
+                "sbk + fh + det + be": 5172,
+                "sbk + fh + ct + det + be": 5172
+            }
+        },
+        "diagnose_a_multi.dice": {
+            "flips": {
+                "no opts": 5005,
+                "det + be": 628,
+                "fh + det + be": 377,
+                "fh + ct + det + be": 377,
+                "sbk + det + be": 2483,
+                "sbk + fh + det + be": 422,
+                "sbk + fh + ct + det + be": 422
+            },
+            "params": {
+                "no opts": 4764,
+                "det + be": 4764,
+                "fh + det + be": 4764,
+                "fh + ct + det + be": 4764,
+                "sbk + det + be": 4764,
+                "sbk + fh + det + be": 4764,
+                "sbk + fh + ct + det + be": 4764
+            },
+            "distinct": {
+                "no opts": 434,
+                "det + be": 434,
+                "fh + det + be": 434,
+                "fh + ct + det + be": 434,
+                "sbk + det + be": 434,
+                "sbk + fh + det + be": 434,
+                "sbk + fh + ct + det + be": 434
+            },
+            "time": {
+                "no opts": 140.9673,
+                "det + be": 1.2934,
+                "fh + det + be": 0.8033,
+                "fh + ct + det + be": 0.767,
+                "sbk + det + be": 14.2681,
+                "sbk + fh + det + be": 1.0986,
+                "sbk + fh + ct + det + be": 1.6015
+            },
+            "size": {
+                "no opts": 5020830,
+                "det + be": 26197,
+                "fh + det + be": 6241,
+                "fh + ct + det + be": 6241,
+                "sbk + det + be": 484026,
+                "sbk + fh + det + be": 5172,
+                "sbk + fh + ct + det + be": 5172
+            }
+        },
+        "diagnose_b.dice": {
+            "flips": {
+                "no opts": 22600,
+                "det + be": 1143,
+                "fh + det + be": 672,
+                "fh + ct + det + be": 672,
+                "sbk + det + be": 7791,
+                "sbk + fh + det + be": 703,
+                "sbk + fh + ct + det + be": 703
+            },
+            "params": {
+                "no opts": 22634,
+                "det + be": 22634,
+                "fh + det + be": 22634,
+                "fh + ct + det + be": 22634,
+                "sbk + det + be": 22634,
+                "sbk + fh + det + be": 22634,
+                "sbk + fh + ct + det + be": 22634
+            },
+            "distinct": {
+                "no opts": 729,
+                "det + be": 729,
+                "fh + det + be": 729,
+                "fh + ct + det + be": 729,
+                "sbk + det + be": 729,
+                "sbk + fh + det + be": 729,
+                "sbk + fh + ct + det + be": 729
+            },
+            "time": {
+                "no opts": null,
+                "det + be": 21.2003,
+                "fh + det + be": 3.1647,
+                "fh + ct + det + be": 4.2895,
+                "sbk + det + be": null,
+                "sbk + fh + det + be": 6.268,
+                "sbk + fh + ct + det + be": 24.8066
+            },
+            "size": {
+                "no opts": null,
+                "det + be": 97573,
+                "fh + det + be": 10628,
+                "fh + ct + det + be": 10628,
+                "sbk + det + be": null,
+                "sbk + fh + det + be": 9615,
+                "sbk + fh + ct + det + be": 9615
+            }
+        },
+        "diagnose_b_multi.dice": {
+            "flips": {
+                "no opts": 22600,
+                "det + be": 1143,
+                "fh + det + be": 672,
+                "fh + ct + det + be": 672,
+                "sbk + det + be": 7791,
+                "sbk + fh + det + be": 703,
+                "sbk + fh + ct + det + be": 703
+            },
+            "params": {
+                "no opts": 22634,
+                "det + be": 22634,
+                "fh + det + be": 22634,
+                "fh + ct + det + be": 22634,
+                "sbk + det + be": 22634,
+                "sbk + fh + det + be": 22634,
+                "sbk + fh + ct + det + be": 22634
+            },
+            "distinct": {
+                "no opts": 729,
+                "det + be": 729,
+                "fh + det + be": 729,
+                "fh + ct + det + be": 729,
+                "sbk + det + be": 729,
+                "sbk + fh + det + be": 729,
+                "sbk + fh + ct + det + be": 729
+            },
+            "time": {
+                "no opts": null,
+                "det + be": 29.1205,
+                "fh + det + be": 3.1433,
+                "fh + ct + det + be": 3.8977,
+                "sbk + det + be": null,
+                "sbk + fh + det + be": 6.2829,
+                "sbk + fh + ct + det + be": 24.4451
+            },
+            "size": {
+                "no opts": null,
+                "det + be": 147375,
+                "fh + det + be": 10628,
+                "fh + ct + det + be": 10628,
+                "sbk + det + be": null,
+                "sbk + fh + det + be": 9615,
+                "sbk + fh + ct + det + be": 9615
+            }
+        },
+        "emdec6g.dice": {
+            "flips": {
+                "no opts": 826,
+                "det + be": 807,
+                "fh + det + be": 712,
+                "fh + ct + det + be": 477,
+                "sbk + det + be": 807,
+                "sbk + fh + det + be": 712,
+                "sbk + fh + ct + det + be": 477
+            },
+            "params": {
+                "no opts": 826,
+                "det + be": 826,
+                "fh + det + be": 826,
+                "fh + ct + det + be": 826,
+                "sbk + det + be": 826,
+                "sbk + fh + det + be": 826,
+                "sbk + fh + ct + det + be": 826
+            },
+            "distinct": {
+                "no opts": 717,
+                "det + be": 717,
+                "fh + det + be": 717,
+                "fh + ct + det + be": 717,
+                "sbk + det + be": 717,
+                "sbk + fh + det + be": 717,
+                "sbk + fh + ct + det + be": 717
+            },
+            "time": {
+                "no opts": 7.7308,
+                "det + be": 4.0449,
+                "fh + det + be": 1.351,
+                "fh + ct + det + be": null,
+                "sbk + det + be": 4.048,
+                "sbk + fh + det + be": 1.3521,
+                "sbk + fh + ct + det + be": null
+            },
+            "size": {
+                "no opts": 169096,
+                "det + be": 75999,
+                "fh + det + be": 12214,
+                "fh + ct + det + be": 12167,
+                "sbk + det + be": 75999,
+                "sbk + fh + det + be": 12214,
+                "sbk + fh + ct + det + be": 12167
+            }
+        },
+        "fire_alarm.dice": {
+            "flips": {
+                "no opts": 12,
+                "det + be": 12,
+                "fh + det + be": 12,
+                "fh + ct + det + be": 12,
+                "sbk + det + be": 12,
+                "sbk + fh + det + be": 12,
+                "sbk + fh + ct + det + be": 12
+            },
+            "params": {
+                "no opts": 12,
+                "det + be": 12,
+                "fh + det + be": 12,
+                "fh + ct + det + be": 12,
+                "sbk + det + be": 12,
+                "sbk + fh + det + be": 12,
+                "sbk + fh + ct + det + be": 12
+            },
+            "distinct": {
+                "no opts": 12,
+                "det + be": 12,
+                "fh + det + be": 12,
+                "fh + ct + det + be": 12,
+                "sbk + det + be": 12,
+                "sbk + fh + det + be": 12,
+                "sbk + fh + ct + det + be": 12
+            },
+            "time": {
+                "no opts": 0.0513,
+                "det + be": 0.0502,
+                "fh + det + be": 0.042,
+                "fh + ct + det + be": 0.038,
+                "sbk + det + be": 0.0367,
+                "sbk + fh + det + be": 0.0363,
+                "sbk + fh + ct + det + be": 0.0532
+            },
+            "size": {
+                "no opts": 34,
+                "det + be": 34,
+                "fh + det + be": 34,
+                "fh + ct + det + be": 34,
+                "sbk + det + be": 34,
+                "sbk + fh + det + be": 34,
+                "sbk + fh + ct + det + be": 34
+            }
+        },
+        "moissac3.dice": {
+            "flips": {
+                "no opts": 57813,
+                "det + be": 13419,
+                "fh + det + be": 2472,
+                "fh + ct + det + be": 2472,
+                "sbk + det + be": 13419,
+                "sbk + fh + det + be": 1766,
+                "sbk + fh + ct + det + be": 1766
+            },
+            "params": {
+                "no opts": 49554,
+                "det + be": 49554,
+                "fh + det + be": 49554,
+                "fh + ct + det + be": 49554,
+                "sbk + det + be": 49554,
+                "sbk + fh + det + be": 49554,
+                "sbk + fh + ct + det + be": 49554
+            },
+            "distinct": {
+                "no opts": 1596,
+                "det + be": 1596,
+                "fh + det + be": 1596,
+                "fh + ct + det + be": 1596,
+                "sbk + det + be": 1596,
+                "sbk + fh + det + be": 1596,
+                "sbk + fh + ct + det + be": 1596
+            },
+            "time": {
+                "no opts": null,
+                "det + be": 741.9621,
+                "fh + det + be": 406.6608,
+                "fh + ct + det + be": 572.3745,
+                "sbk + det + be": 891.7545,
+                "sbk + fh + det + be": 434.205,
+                "sbk + fh + ct + det + be": 583.7535
+            },
+            "size": {
+                "no opts": null,
+                "det + be": 498240,
+                "fh + det + be": 267648,
+                "fh + ct + det + be": 267648,
+                "sbk + det + be": 633378,
+                "sbk + fh + det + be": 246846,
+                "sbk + fh + ct + det + be": 246846
+            }
+        },
+        "spect.dice": {
+            "flips": {
+                "no opts": 45,
+                "det + be": 45,
+                "fh + det + be": 45,
+                "fh + ct + det + be": 45,
+                "sbk + det + be": 45,
+                "sbk + fh + det + be": 45,
+                "sbk + fh + ct + det + be": 45
+            },
+            "params": {
+                "no opts": 45,
+                "det + be": 45,
+                "fh + det + be": 45,
+                "fh + ct + det + be": 45,
+                "sbk + det + be": 45,
+                "sbk + fh + det + be": 45,
+                "sbk + fh + ct + det + be": 45
+            },
+            "distinct": {
+                "no opts": 45,
+                "det + be": 45,
+                "fh + det + be": 45,
+                "fh + ct + det + be": 45,
+                "sbk + det + be": 45,
+                "sbk + fh + det + be": 45,
+                "sbk + fh + ct + det + be": 45
+            },
+            "time": {
+                "no opts": 0.0428,
+                "det + be": 0.041,
+                "fh + det + be": 0.0413,
+                "fh + ct + det + be": 0.0412,
+                "sbk + det + be": 0.0412,
+                "sbk + fh + det + be": 0.0408,
+                "sbk + fh + ct + det + be": 0.0412
+            },
+            "size": {
+                "no opts": 69,
+                "det + be": 69,
+                "fh + det + be": 69,
+                "fh + ct + det + be": 69,
+                "sbk + det + be": 69,
+                "sbk + fh + det + be": 69,
+                "sbk + fh + ct + det + be": 69
+            }
+        },
+        "tcc4e.dice": {
+            "flips": {
+                "no opts": 1604,
+                "det + be": 1604,
+                "fh + det + be": 545,
+                "fh + ct + det + be": 533,
+                "sbk + det + be": 1604,
+                "sbk + fh + det + be": 545,
+                "sbk + fh + ct + det + be": 533
+            },
+            "params": {
+                "no opts": 1604,
+                "det + be": 1604,
+                "fh + det + be": 1604,
+                "fh + ct + det + be": 1604,
+                "sbk + det + be": 1604,
+                "sbk + fh + det + be": 1604,
+                "sbk + fh + ct + det + be": 1604
+            },
+            "distinct": {
+                "no opts": 545,
+                "det + be": 545,
+                "fh + det + be": 545,
+                "fh + ct + det + be": 545,
+                "sbk + det + be": 545,
+                "sbk + fh + det + be": 545,
+                "sbk + fh + ct + det + be": 545
+            },
+            "time": {
+                "no opts": 0.7866,
+                "det + be": 0.786,
+                "fh + det + be": 0.3745,
+                "fh + ct + det + be": null,
+                "sbk + det + be": 0.9832,
+                "sbk + fh + det + be": 0.5194,
+                "sbk + fh + ct + det + be": null
+            },
+            "size": {
+                "no opts": 3112,
+                "det + be": 3112,
+                "fh + det + be": 1321,
+                "fh + ct + det + be": 1317,
+                "sbk + det + be": 3112,
+                "sbk + fh + det + be": 1321,
+                "sbk + fh + ct + det + be": 1317
+            }
+        }
+    }
+}
