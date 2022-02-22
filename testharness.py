@@ -72,27 +72,27 @@ def get_mode_cmd(mode):
   if mode == Modes.DET:
     return ['-determinism']
   if mode == Modes.FH:
-    return ['-determinism', '-flip-hoisting', '-branch-elimination']
+    return ['-determinism', '-local-hoisting', '-branch-elimination']
   if mode == Modes.FHCT:
-    return ['-determinism', '-flip-hoisting', '-cross-table', '-branch-elimination']
+    return ['-determinism', '-global-hoisting', '-branch-elimination']
   if mode == Modes.SBK:
     return ['-determinism', '-sbk-encoding', '-branch-elimination']
   if mode == Modes.SBKFH:
-    return ['-determinism', '-flip-hoisting', '-sbk-encoding', '-branch-elimination']
+    return ['-determinism', '-local-hoisting', '-sbk-encoding', '-branch-elimination']
   if mode == Modes.SBKFHCT:
-    return ['-determinism', '-flip-hoisting', '-cross-table', '-sbk-encoding', '-branch-elimination']
+    return ['-determinism', '-global-hoisting', '-sbk-encoding', '-branch-elimination']
   if mode == Modes.EA:
     return ['-eager-eval', '-determinism', '-branch-elimination']
   if mode == Modes.EAFH:
-    return ['-eager-eval', '-flip-hoisting', '-determinism', '-branch-elimination']
+    return ['-eager-eval', '-local-hoisting', '-determinism', '-branch-elimination']
   if mode == Modes.EAFHCT:
-    return ['-eager-eval', '-flip-hoisting', '-cross-table', '-determinism', '-branch-elimination']
+    return ['-eager-eval', '-global-hoisting', '-determinism', '-branch-elimination']
   if mode == Modes.EASBK:
     return ['-eager-eval', '-sbk-encoding', '-determinism', '-branch-elimination']
   if mode == Modes.EASBKFH:
-    return ['-eager-eval', '-sbk-encoding', '-flip-hoisting', '-determinism', '-branch-elimination']
+    return ['-eager-eval', '-sbk-encoding', '-local-hoisting', '-determinism', '-branch-elimination']
   if mode == Modes.EASBKFHCT:
-    return ['-eager-eval', '-sbk-encoding', '-flip-hoisting', '-cross-table', '-determinism', '-branch-elimination']
+    return ['-eager-eval', '-sbk-encoding', '-global-hoisting', '-determinism', '-branch-elimination']
   
   return None
 
