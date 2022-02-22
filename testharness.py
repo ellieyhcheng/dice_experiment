@@ -247,25 +247,38 @@ def cnf(file, dice_path, timeout):
 
   print('File:', file)
 
-  modes = [Modes.NOOPT, Modes.Det, Modes.FH]
-  results = {Fields.TIME:{m:None for m in modes}}
+  modes = [Modes.DET, Modes.FH]
+  results = {Fields.SIZE:{m:None for m in modes}}
 
-  print('Measuring time elapsed...')
+  print('Measuring BDD size, number of recursive calls, and/or number of calls...')
+  cmd = [dice_path, file, '-cnf', '-show-cnf-decisions']
   for mode in modes:
-    cmd = get_mode_cmd(mode)
-    if cmd is None:
+    mode_cmd = get_mode_cmd(mode)
+    if mode_cmd is None:
       print('UNKNOWN MODE')
       continue
 
     print('Mode:', mode)
 
     try:
-      t1 = time.time()
-      p = subprocess.Popen([dice_path, file, '-skip-table'] + cmd, 
-        stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+      p = subprocess.Popen(cmd + mode_cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
       out, err = p.communicate(timeout=timeout)
-      t2 = time.time()
-      results[Fields.TIME][mode] = round(t2 - t1, 4)
+      output = out.decode('utf-8')
+      dec_pattern = re.compile('================\[ Average CNF decisions \]================\s(\d+.?\d*)')
+      dec_matches = dec_pattern.search(output)
+
+      if dec_matches:
+        if not Fields.SIZE in results:
+          results[Fields.CALLS] = {}
+        results[Fields.SIZE][mode] = int(float(dec_matches.group(1)))
+      
+      
+      if not dec_matches :
+        if not Fields.SIZE in results:
+          results[Fields.SIZE] = {}
+        results[Fields.SIZE][mode] = -1
+        print('ERROR:')
+        print(output)
 
     except subprocess.TimeoutExpired:
       print('TIMEOUT')
@@ -354,12 +367,17 @@ def main():
       else:
         timeout = None
 
+      if args.dice:
+        dice_path = args.dice[0]
+      else:
+        dice_path = './'
+
       print()
 
       for filename in os.listdir(files):
         file = os.path.join(files, filename)
         if os.path.isfile(file) and os.path.splitext(file)[-1].lower() == '.dice':
-          results[filename] = cnf(file, timeout)
+          results[filename] = cnf(file, dice_path, timeout)
 
       print()
       
