@@ -252,6 +252,10 @@ def cnf(file, dice_path, timeout, results):
   print('Measuring BDD size, number of recursive calls, and/or number of calls...')
   cmd = [dice_path, file, '-cnf', '-show-cnf-decisions']
   for mode in modes:
+    if Fields.SIZE in results:
+      if results[Fields.SIZE][mode] is not None or results[Fields.SIZE][mode] != -1:
+        continue
+
     mode_cmd = get_mode_cmd(mode)
     if mode_cmd is None:
       print('UNKNOWN MODE')
