@@ -381,6 +381,7 @@ def main():
           else:
             file_results = {}
           if not Fields.SIZE in file_results:
+            modes = [Modes.DET, Modes.FH]
             file_results[Fields.SIZE] = {m:None for m in modes}
             
           results[filename] = cnf(file, dice_path, timeout, file_results)
