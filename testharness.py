@@ -376,7 +376,10 @@ def main():
       for filename in os.listdir(files):
         file = os.path.join(files, filename)
         if os.path.isfile(file) and os.path.splitext(file)[-1].lower() == '.dice':
-          file_results = results[filename]
+          if filename in results:
+            file_results = results[filename]
+          else:
+            file_results = {}
           if not Fields.SIZE in file_results:
             file_results[Fields.SIZE] = {m:None for m in modes}
             
