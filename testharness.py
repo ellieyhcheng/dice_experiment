@@ -269,7 +269,7 @@ def cnf(file, dice_path, timeout):
 
       if dec_matches:
         if not Fields.SIZE in results:
-          results[Fields.CALLS] = {}
+          results[Fields.SIZE] = {}
         results[Fields.SIZE][mode] = int(float(dec_matches.group(1)))
       
       
