@@ -242,13 +242,12 @@ def problog(file, timeout):
     print()
     return None
 
-def cnf(file, dice_path, timeout):
+def cnf(file, dice_path, timeout, results):
   print('========================================')
 
   print('File:', file)
 
   modes = [Modes.DET, Modes.FH]
-  results = {Fields.SIZE:{m:None for m in modes}}
 
   print('Measuring BDD size, number of recursive calls, and/or number of calls...')
   cmd = [dice_path, file, '-cnf', '-show-cnf-decisions']
@@ -377,7 +376,11 @@ def main():
       for filename in os.listdir(files):
         file = os.path.join(files, filename)
         if os.path.isfile(file) and os.path.splitext(file)[-1].lower() == '.dice':
-          results[filename] = cnf(file, dice_path, timeout)
+          file_results = results[filename]
+          if not Fields.SIZE in file_results:
+            file_results[Fields.SIZE] = {m:None for m in modes}
+            
+          results[filename] = cnf(file, dice_path, timeout, file_results)
 
       print()
       
