@@ -357,7 +357,12 @@ def main():
 
   elif args.cnf:
     files = args.dir[0]
-    results = {}
+    out = 'cnf_results.json'
+    if os.path.exists(out):
+      with open(out) as f:
+        results = json.load(f)
+    else:
+      results = {}
     if not os.path.isdir(files):
       print('Invalid directory specified:', files)
       exit(2)
@@ -388,12 +393,11 @@ def main():
           if not Fields.SIZE in file_results:
             modes = [Modes.DET, Modes.FH]
             file_results[Fields.SIZE] = {m:None for m in modes}
-          print(file_results)
           results[filename] = cnf(file, dice_path, timeout, file_results)
 
       print()
       
-    with open('cnf_results.json', 'w') as f:
+    with open(out, 'w') as f:
       json.dump(results, f, indent=4)
 
   elif args.dir:
