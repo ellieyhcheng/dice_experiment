@@ -253,7 +253,8 @@ def cnf(file, dice_path, timeout, results):
   cmd = [dice_path, file, '-cnf', '-show-cnf-decisions']
   for mode in modes:
     if Fields.SIZE in results:
-      if results[Fields.SIZE][mode] is not None or results[Fields.SIZE][mode] != -1:
+      if results[Fields.SIZE][mode] is not None and results[Fields.SIZE][mode] != -1:
+        print('Skip')
         continue
 
     mode_cmd = get_mode_cmd(mode)
@@ -387,7 +388,7 @@ def main():
           if not Fields.SIZE in file_results:
             modes = [Modes.DET, Modes.FH]
             file_results[Fields.SIZE] = {m:None for m in modes}
-            
+          print(file_results)
           results[filename] = cnf(file, dice_path, timeout, file_results)
 
       print()
