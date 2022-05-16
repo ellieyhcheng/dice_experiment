@@ -435,14 +435,15 @@ def main():
 
       results = {}
 
-      for filename in os.listdir(files):
+      for filename in sorted(os.listdir(files)):
         file = os.path.join(files, filename)
         if os.path.isfile(file) and os.path.splitext(file)[-1].lower() == '.dice':
-          results[filename] = run(file, dice_path, timeout, fields, modes)
+          try:
+            results[filename] = run(file, dice_path, timeout, fields, modes)
+          except KeyboardInterrupt:
+            break
 
       print()
-
-    
 
     old_results = old_data['results']
       
