@@ -100,12 +100,10 @@ def get_mode_cmd(mode):
   
   return None
 
-def run(file, dice_path, timeout, fields, modes):
+def run(file, dice_path, timeout, fields, modes, results):
   print('========================================')
 
   print('File:', file)
-
-  results = {f:{m:None for m in modes} for f in fields}
 
   if Fields.TIME in fields:
     print('Measuring time elapsed...')
@@ -116,6 +114,10 @@ def run(file, dice_path, timeout, fields, modes):
         continue
 
       print('Mode:', mode)
+      
+      if results[Fields.TIME][mode] is not None and results[Fields.TIME][mode] != -1:
+        print('Skip')
+        continue
 
       try:
         t1 = time.time()
@@ -131,7 +133,7 @@ def run(file, dice_path, timeout, fields, modes):
 
     print()
   
-  if Fields.SIZE in fields or Fields.CALLS or Fields.FLIPS in fields \
+  if Fields.SIZE in fields or Fields.CALLS in fields or Fields.FLIPS in fields \
     or Fields.PARAMS in fields or Fields.DISTINCT in fields:
     print('Measuring BDD size, number of recursive calls, and/or number of calls...')
     cmd = [dice_path, file, '-skip-table']
@@ -155,6 +157,18 @@ def run(file, dice_path, timeout, fields, modes):
         continue
 
       print('Mode:', mode)
+
+      skip = False
+      for f in fields:
+        if f != Fields.TIME and f in results \
+          and mode in results[f] \
+          and results[f][mode] is not None \
+          and results[f][mode] != -1:
+          skip = True
+          break
+      if skip:
+        print('Skip')
+        continue
 
       try:
         p = subprocess.Popen(cmd + mode_cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
@@ -437,31 +451,33 @@ def main():
 
       print()
 
-      results = {}
+      if 'results' in old_data:
+        results = old_data['results']
+      else:
+        results = {}
 
       for filename in sorted(os.listdir(files)):
         file = os.path.join(files, filename)
         if os.path.isfile(file) and os.path.splitext(file)[-1].lower() == '.dice':
+          if filename in results:
+            file_results = results[filename]
+          else:
+            file_results = {}
+
+          for f in fields:
+            if not f in file_results:
+              file_results[f] = {m:None for m in modes}
+            else:
+              file_results[f] = {m:file_results[f][m] if m in file_results[f] else None for m in modes}
+
           try:
-            results[filename] = run(file, dice_path, timeout, fields, modes)
+            results[filename] = run(file, dice_path, timeout, fields, modes, file_results)
           except KeyboardInterrupt:
             break
 
       print()
 
-    old_results = old_data['results']
-      
-    for filename in results.keys():
-      if filename in old_results:
-        for field in results[filename]:
-          if not field in old_results[filename]:
-            old_results[filename][field] = {}
-          for mode in results[filename][field]:
-            old_results[filename][field][mode] = results[filename][field][mode]
-      else:
-        old_results[filename] = results[filename]
-
-    old_data['results'] = old_results
+    old_data['results'] = results
       
     with open(out, 'w') as f:
       json.dump(old_data, f, indent=4)
