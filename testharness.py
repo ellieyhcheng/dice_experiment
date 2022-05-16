@@ -29,7 +29,8 @@ class Modes(str, Enum):
   SBKFH = 'sbk + fh + det + be'
   SBKFHCT = 'sbk + fh + ct + det + be'
 
-  EA = 'ea + det + be'
+  EA = 'ea'
+  EADET = 'ea + det + be'
   EAFH = 'ea + fh + det + be'
   EAFHCT = 'ea + fh + ct + det + be'
   EASBK = 'ea + sbk + det + be'
@@ -57,6 +58,7 @@ class Modes(str, Enum):
       Modes.SBKFH: 'SBK+FH',
       Modes.SBKFHCT: 'SBK+FHCT',
       Modes.EA: 'Ea',
+      Modes.EADET: 'Ea+Det',
       Modes.EAFH: 'Ea+FH',
       Modes.EAFHCT: 'Ea+FHCT',
       Modes.EASBK: 'Ea+SBK',
@@ -82,6 +84,8 @@ def get_mode_cmd(mode):
   if mode == Modes.SBKFHCT:
     return ['-determinism', '-global-hoisting', '-sbk-encoding', '-branch-elimination']
   if mode == Modes.EA:
+    return ['-eager-eval']
+  if mode == Modes.EADET:
     return ['-eager-eval', '-determinism', '-branch-elimination']
   if mode == Modes.EAFH:
     return ['-eager-eval', '-local-hoisting', '-determinism', '-branch-elimination']
@@ -250,7 +254,7 @@ def cnf(file, dice_path, timeout, results):
   modes = [Modes.DET, Modes.FH]
 
   print('Measuring BDD size, number of recursive calls, and/or number of calls...')
-  cmd = [dice_path, file, '-cnf', '-show-cnf-decisions']
+  cmd = [dice_path, file, '-cnf', '-show-cnf-decisions', '-fc-timeout', '5']
   for mode in modes:
     if Fields.SIZE in results:
       if results[Fields.SIZE][mode] is not None and results[Fields.SIZE][mode] != -1:
@@ -268,7 +272,7 @@ def cnf(file, dice_path, timeout, results):
       p = subprocess.Popen(cmd + mode_cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
       out, err = p.communicate(timeout=timeout)
       output = out.decode('utf-8')
-      dec_pattern = re.compile('================\[ Average CNF decisions \]================\s(\d+.?\d*)')
+      dec_pattern = re.compile('================\[ Total CNF decisions \]================\s(\d+.?\d*)')
       dec_matches = dec_pattern.search(output)
 
       if dec_matches:
