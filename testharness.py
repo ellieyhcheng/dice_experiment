@@ -120,13 +120,27 @@ def run(file, dice_path, timeout, fields, modes, results):
         print('Skip')
         continue
 
+      # try:
+      #   t1 = time.time()
+      #   p = subprocess.Popen([dice_path, file, '-skip-table', '-show-time'] + cmd, 
+      #     stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+      #   out, err = p.communicate(timeout=timeout)
+      #   t2 = time.time()
+      #   results[Fields.TIME][mode] = round(t2 - t1, 4)
+
       try:
-        t1 = time.time()
-        p = subprocess.Popen([dice_path, file, '-skip-table'] + cmd, 
+        p = subprocess.Popen([dice_path, file, '-skip-table', '-show-time'] + cmd, 
           stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         out, err = p.communicate(timeout=timeout)
-        t2 = time.time()
-        results[Fields.TIME][mode] = round(t2 - t1, 4)
+        output = out.decode('utf-8')
+        time_pattern = re.compile('================\[ Compilation Time Elapsed \]================\s(\d+.?\d*)')
+        
+        time_matches = time_pattern.search(output)
+
+        if time_matches:
+          if not Fields.TIME in results:
+            results[Fields.TIME] = {}
+          results[Fields.TIME][mode] = float(time_matches.group(1))
 
       except subprocess.TimeoutExpired:
         print('TIMEOUT')
