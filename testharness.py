@@ -469,7 +469,9 @@ def main():
             if not f in file_results:
               file_results[f] = {m:None for m in modes}
             else:
-              file_results[f] = {m:file_results[f][m] if m in file_results[f] else None for m in modes}
+              for m in modes:
+                if not m in file_results[f]:
+                  file_results[f][m] = None
 
           try:
             results[filename] = run(file, dice_path, timeout, fields, modes, file_results)
