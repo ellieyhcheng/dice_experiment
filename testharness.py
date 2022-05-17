@@ -8,6 +8,7 @@ import matplotlib.pyplot as plt
 from string import Template
 from enum import Enum
 import time
+import math
 
 class Fields(str, Enum):
   TIME = 'time'
@@ -316,7 +317,7 @@ def main():
   parser.add_argument('-d', '--dice', type=str, nargs=1, help='path to Dice')
   parser.add_argument('-o', '--out', type=str, nargs='?', const='results.json', default='results.json', help='path to output file. Defaults to results.json')
   parser.add_argument('--table', action='store_true', help='prints data from output file as Latex table')
-  parser.add_argument('--plot', type=str, nargs='?', const='cactus_plot.png', help='generate cactus plot. specify filename or default to cactus_plot.png')
+  parser.add_argument('--plot', action='store_true', help='generate plots')
   parser.add_argument('--columns', nargs='+', type=Modes.from_string, choices=list(Modes), help='select modes to include in the table or plot')
 
   parser.add_argument('--timeout', type=int, nargs=1, help='sets timeout in seconds')
@@ -582,14 +583,17 @@ $rows
 
     modes = args.columns or Modes
 
-    for m, color in zip(modes, colors):
+    # time cactus plot
+    labels = ['Original', 'With Local Flip-Hoisting']
+    for m, color, label in zip(modes, colors, labels):
       y_data = []
       y_timeouts = []
       for filename in old_results.keys():
         if m in old_results[filename][Fields.TIME] and old_results[filename][Fields.TIME][m]:
-          y_data.append(old_results[filename][Fields.TIME][m])
+          # y_data.append(old_results[filename][Fields.TIME][m])
+          y_data.append(math.log(old_results[filename][Fields.TIME][m]))
         else:
-          y_timeouts.append(old_data['timeouts'][m])
+          y_timeouts.append(math.log(old_data['timeouts'][m]))
 
       y_data.sort()
 
@@ -598,19 +602,95 @@ $rows
       x_data = [x for x in range(len(y_data))]
       x_timeouts = [x + len(x_data) - 1 for x in range(len(y_timeouts))]
 
-      plt.plot(x_data, y_data, 'o-', color=color, label=m)
+      plt.plot(x_data, y_data, 'o-', color=color, label=label)
       plt.plot(x_timeouts, y_timeouts, 'x-', color=color)
 
     plt.xlabel('Benchmarks')
-    plt.ylabel('Time (s)')
+    # plt.ylabel('Time (s)')
+    plt.ylabel('Time (log s)')
     plt.legend()
 
     plt.grid(True, ls=':')
 
-    filename = args.plot
+    plot_name = 'time_cactus.png'
 
-    plt.savefig(filename, bbox_inches='tight')
-    print('Saved to %s' % filename)
+    plt.savefig(plot_name, bbox_inches='tight')
+    print('Saved to %s' % plot_name)
+
+    # size plot
+    plt.figure(figsize=(20,15))
+    width = 0.4
+    files = sorted(old_results.keys())
+    x_data = [x for x in range(len(files))]
+
+    for m, color, label in zip(modes, colors, labels):
+      y_data = []
+      y_timeouts = []
+      for filename in files:
+        if m in old_results[filename][Fields.SIZE] and old_results[filename][Fields.SIZE][m]:
+          # y_data.append(old_results[filename][Fields.SIZE][m])
+          y_data.append(math.log(old_results[filename][Fields.SIZE][m], 10))
+        else:
+          y_data.append(0)
+
+      plt.bar(x_data, y_data, color=color, width=width, label=label)
+      x_data = [x+width for x in x_data]
+      # plt.plot(x_timeouts, y_timeouts, 'x-', color=color)
+
+    labels = [f.split('.')[0] for f in files]
+    half_width = (x_data[0] - width) / 2
+    x_data = [x-width-half_width for x in x_data]
+    plt.xticks(x_data, labels, rotation=-45, ha="left", rotation_mode="anchor")
+    plt.xlabel('Benchmarks')
+    # plt.ylabel('BDD Size')
+    plt.ylabel('BDD Size (log10)')
+    plt.legend()
+
+    plt.grid(True, ls=':')
+
+    plot_name = 'size_cactus.png'
+
+    plt.savefig(plot_name, bbox_inches='tight')
+    print('Saved to %s' % plot_name)
+
+    # time to flips 
+    # plt.figure()
+    # for m, color in zip(modes, colors):
+    #   data = []
+    #   for filename in old_results.keys():
+    #     if m in old_results[filename][Fields.TIME] and old_results[filename][Fields.TIME][m]:
+    #       y = old_results[filename][Fields.TIME][m]
+    #       y_timeout = True
+    #     else:
+    #       y = old_data['timeouts'][m]
+    #       y_timeout = False
+        
+    #     if m in old_results[filename][Fields.FLIPS] and old_results[filename][Fields.FLIPS][m]:
+    #       x = old_results[filename][Fields.FLIPS][m]
+    #       data.append((x, y, y_timeout))
+
+    #   data.sort(key=lambda d: d[0])
+
+    #   y_data = [d[1] for d in data]
+    #   y_no_timeouts = [d[1] for d in data if d[2]]
+    #   x_no_timeouts = [i for i in range(len(data)) if data[i][2]]
+    #   y_timeouts = [d[1] for d in data if not d[2]]
+    #   x_timeouts = [d[0] for d in data if not d[2]]
+    #   x_data = [d[0] for d in data]
+
+    #   plt.plot(x_data, y_data, 'o-', color=color, label=m, markevery=x_no_timeouts)
+    #   # plt.plot(x_timeouts, y_timeouts, 'x-', color=color)
+
+    # plt.xlabel('Flips')
+    # plt.ylabel('Time (s)')
+    # plt.legend()
+
+    # plt.grid(True, ls=':')
+
+    # plot_name = 'flips2time.png'
+
+    # plt.savefig(plot_name, bbox_inches='tight')
+    # print('Saved to %s' % plot_name)
 
 if __name__ == '__main__':
   main()
