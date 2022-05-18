@@ -609,6 +609,7 @@ $rows
           # y_data.append(old_results[filename][Fields.TIME][m])
           y_data.append(math.log(old_results[filename][Fields.TIME][m]))
         else:
+          # y_timeouts.append(old_data['timeouts'][m])
           y_timeouts.append(math.log(old_data['timeouts'][m]))
 
       y_data.sort()
@@ -643,7 +644,8 @@ $rows
       y_data = []
       y_timeouts = []
       for filename in files:
-        if m in old_results[filename][Fields.SIZE] and old_results[filename][Fields.SIZE][m]:
+        if m in old_results[filename][Fields.SIZE] and old_results[filename][Fields.SIZE][m] \
+          and old_results[filename][Fields.SIZE][m] != -1:
           # y_data.append(old_results[filename][Fields.SIZE][m])
           y_data.append(math.log(old_results[filename][Fields.SIZE][m], 10))
         else:
